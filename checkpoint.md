@@ -94,3 +94,100 @@ the most constrained condition, and the frozen roster would have needed a substi
 **Re-tested: fixed, 3/3 pass.** Roster stands unchanged. Re-verify before the full grid.
 
 **Next:** `src/harness/configurable.py` — the config-driven executor.
+
+---
+
+## Session 3 — Phase 2 continued: configurable harness + ADF ladder
+
+**Date:** 2026-09-17 (multi-session continuation)
+**Spent:** $0.00 (zero API calls — pure build session)
+**Commits:** 7d92e41 (Phase 2: configurable harness + ADF ladder)
+
+### Delivered this session
+
+1. **`src/harness/configurable.py`** (new, ~600 lines) — the config-driven executor.
+   - `HarnessConfig`-driven; every layer independently togglable (all 8 fields, any
+     combination).
+   - Reuses `fsm.py`'s `_structured_plan_prompt`, `parse_structured_plan`,
+     `validate_structured_plan`, and all validators verbatim (loop_eng.md §3).
+   - `_make_arg_variant()`: wraps session-based tools with the arg schema for the
+     configured `arg_mode` (fixed / enum_strict / typed / free_form).  Each has a
+     default value so the tool doesn't fail when the model omits the arg.
+   - `_build_lc_tools()`: selects the tool list for the step based on `tool_mode`
+     (forced_single / subset / free_choice).
+   - `_plan_phase()`: `schema_validated` (with retries and escalation) + `free_text`.
+   - `_routing_phase()`: `fixed_map` (logged, no LLM call) + `model_chosen`
+     (manager LLM picks agent from K candidates; routing_decision event logged).
+   - `_execute_step()`: handles all three substrates — `tool_call` (full), `codegen`
+     (exec() sandbox), `hybrid` (model may call tool OR write code).
+   - `_get_next_state_model_chosen()`: iterative state selection loop for
+     `state_mode="model_chosen"`; caps at 30 steps; logs `state_choice` event.
+   - All attempts retained in trace regardless of outcome (rule §1.5).
+   - `TaskDefinition` dataclass + registry; `_make_f1_finance_task_def` and
+     `_make_f1_legal_task_def` factories; `register_task_definition()` hook for
+     F2 and later families.
+   - `run_configurable()` main entry point: computes ADF, logs `adf_config` event
+     before execution, runs all phases, scores against ground truth.
+
+2. **`src/tracing/logger.py`** (extended, backward-compatible) — six new event types:
+   `adf_config`, `routing_decision`, `skill_load`, `step_attempt`, `state_choice`,
+   `codegen_attempt`.
+
+3. **`docs/adf_ladder.md`** (new, **FROZEN** per prereg §5 — required before any grid
+   run) — 8 rungs L0′ through L6:
+   ```
+   Rung    ADF_rate @2^10
+   L0'     0.000   schema/fsm/fixed/forced/fixed/tool_call
+   L0      0.381   +enum_strict args
+   L1      0.857   +free_text plan
+   L2      1.159   +model_chosen routing
+   L3      1.921   +subset tools + typed args
+   L4      2.363   +model_chosen state
+   L5      3.567   +free_choice tools + free_form args
+   L6      3.758   +hybrid substrate
+   ```
+   Monotone at all three proxy values (verified by compute_adf).
+   H5 test pair documented: L5-tool_call vs L5-codegen (ADF_rate identical at all
+   proxies — the substrate-equivalence test pair per prereg §1 H5).
+
+4. **venv created** (`.venv/`) — `requirements.txt` installed.
+
+### Smoke tests (zero API spend — deterministic stub model)
+
+7 configs exercised (fin/L0′ through fin/L3, leg/L0, leg/L1):
+- All `task_success=True`
+- All `adf_rate` exact to 3dp vs formula
+- Trace for fin/L2 verified: all 9 required event types present
+  (`run_start`, `adf_config`, `plan`, `routing_decision`, `state_transition`,
+  `skill_load`, `step_attempt`, `tool_call`, `run_end`)
+
+### What the harness does NOT do yet (next session)
+
+- **F2 branching task family** — `get_task_definition('branching')` not yet registered.
+  Required before Phase 4 branching-task sanity gate.
+- **tau2-bench F0** — not cloned or integrated.
+- **Phase 4 validation test suite** (`tests/`) — still only `__init__.py`.
+  Required before ANY real API spend.
+- **Difficulty calibration** (section 4.4) — requires F2 to exist first.
+- **Multi-session instance generation** — `data/` still has only 2 instances
+  (finance/portfolio.csv, legal/contract.txt); ≥20 per family required.
+
+### Next steps (in priority order)
+
+1. **F2 branching task family** — `src/tasks/branching_ecl.py` + scorer + ≥20
+   instances with known required paths (correct state sequence depends on data,
+   NOT inferable from the task description alone).  Register with
+   `register_task_definition('branching')`.  This is the family that makes H2
+   and H3 testable.
+2. **Phase 4 validation suite** (`tests/test_harness.py`, `tests/test_adf.py`,
+   `tests/test_branching.py`) — all 10 gates in loop_eng.md §5 as real pytest
+   tests.  Gate: all pass before any API spend.
+3. **tau2-bench clone and integration** (F0 family, v1.0.1 pinned) — requires
+   tau2-bench repo, uv, Python 3.12; user simulator pinned at T=0.
+4. **Instance generation** for F1 families — ≥20 instances each with ground
+   truth from deterministic Python; RNG seeds committed.
+5. **Difficulty calibration** (§4.4) — requires F2 + ≥20 instances.
+
+**Stop conditions:** None applicable (Phase 2 still in progress).
+**Diagnostics:** Not applicable (no data runs yet).
+**Budget:** $0.00 spent this session. Running total ~$0.0005.
