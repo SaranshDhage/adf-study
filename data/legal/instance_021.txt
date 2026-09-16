@@ -1,0 +1,8 @@
+Clause 1: Any dispute under this contract shall be resolved under governing law of England and Wales.
+Clause 2: Any modifications to this agreement must be made in writing and signed by authorised representatives of both parties.
+Clause 3: If any provision of this agreement is found unenforceable, the remaining provisions shall continue in full force.
+Clause 4: The vendor agrees to indemnify the client against all third-party claims resulting from defective products supplied under this contract.
+Clause 5: Upon termination, all outstanding payments shall become immediately due and payable.
+Clause 6: In the event of force majeure, the affected party shall notify the other in writing within 5 business days and be excused from performance.
+Clause 7: The aggregate liability of either party under this agreement shall not exceed the total fees paid in the preceding 12 months.
+Clause 8: Payment shall be made by wire transfer within 15 days of invoice date. The client shall not withhold payment for disputed amounts.

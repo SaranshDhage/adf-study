@@ -1,0 +1,8 @@
+Clause 1: Confidential information exchanged between the parties shall be protected using at least the same degree of care as the receiving party uses for its own confidential information.
+Clause 2: Upon termination, all outstanding payments shall become immediately due and payable.
+Clause 3: In the event of force majeure, the affected party shall notify the other in writing within 5 business days and be excused from performance.
+Clause 4: All invoices shall be paid within 30 days of receipt. Late payments shall incur interest at 1.5% per month.
+Clause 5: Any modifications to this agreement must be made in writing and signed by authorised representatives of both parties.
+Clause 6: The vendor agrees to indemnify the client against all third-party claims resulting from defective products supplied under this contract.
+Clause 7: This agreement shall be governed by and construed in accordance with the governing law of the State of New York.
+Clause 8: Neither party shall be liable for lost profits, data loss, or business interruption even if advised of the possibility of such damages.

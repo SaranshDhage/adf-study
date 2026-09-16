@@ -1,0 +1,65 @@
+{
+  "clause_count": 10,
+  "category_counts": {
+    "Confidentiality": 2,
+    "Termination": 1,
+    "Payment Terms": 2,
+    "Indemnification": 1,
+    "Governing Law": 1,
+    "Limitation of Liability": 1,
+    "Force Majeure": 1,
+    "Other": 1
+  },
+  "clauses": [
+    {
+      "clause_id": "C1",
+      "category": "Confidentiality",
+      "snippet": "Each party agrees to keep confidential all proprietary information disclosed und"
+    },
+    {
+      "clause_id": "C2",
+      "category": "Termination",
+      "snippet": "Either party may terminate this Agreement upon thirty (30) days written notice t"
+    },
+    {
+      "clause_id": "C3",
+      "category": "Payment Terms",
+      "snippet": "Client shall remit payment within thirty (30) days of receipt of invoice. Late p"
+    },
+    {
+      "clause_id": "C4",
+      "category": "Indemnification",
+      "snippet": "Each party shall indemnify and hold harmless the other party from any claims, da"
+    },
+    {
+      "clause_id": "C5",
+      "category": "Governing Law",
+      "snippet": "This Agreement shall be governed by and construed in accordance with the laws of"
+    },
+    {
+      "clause_id": "C6",
+      "category": "Limitation of Liability",
+      "snippet": "In no event shall either party's total liability under this Agreement exceed the"
+    },
+    {
+      "clause_id": "C7",
+      "category": "Force Majeure",
+      "snippet": "Neither party shall be liable for any failure to perform due to causes beyond it"
+    },
+    {
+      "clause_id": "C8",
+      "category": "Confidentiality",
+      "snippet": "All information marked as confidential shall remain the exclusive property of th"
+    },
+    {
+      "clause_id": "C9",
+      "category": "Other",
+      "snippet": "This Agreement constitutes the entire understanding between the parties and supe"
+    },
+    {
+      "clause_id": "C10",
+      "category": "Payment Terms",
+      "snippet": "All invoices must reference the applicable purchase order number and be submitte"
+    }
+  ]
+}

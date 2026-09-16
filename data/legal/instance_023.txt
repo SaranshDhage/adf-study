@@ -1,0 +1,9 @@
+Clause 1: Headings in this agreement are for convenience only and shall not affect interpretation.
+Clause 2: Confidential information exchanged between the parties shall be protected using at least the same degree of care as the receiving party uses for its own confidential information.
+Clause 3: The parties agree to negotiate in good faith to resolve any ambiguities in the interpretation of this agreement.
+Clause 4: The aggregate liability of either party under this agreement shall not exceed the total fees paid in the preceding 12 months.
+Clause 5: The vendor agrees to indemnify the client against all third-party claims resulting from defective products supplied under this contract.
+Clause 6: Upon termination, all outstanding payments shall become immediately due and payable.
+Clause 7: Any dispute under this contract shall be resolved under governing law of England and Wales.
+Clause 8: All invoices shall be paid within 30 days of receipt. Late payments shall incur interest at 1.5% per month.
+Clause 9: This agreement is subject to a force majeure provision releasing both parties from obligations made impossible by extraordinary events.

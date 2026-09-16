@@ -1,0 +1,60 @@
+{
+  "clause_count": 9,
+  "category_counts": {
+    "Termination": 1,
+    "Confidentiality": 1,
+    "Limitation of Liability": 1,
+    "Other": 2,
+    "Governing Law": 1,
+    "Payment Terms": 1,
+    "Force Majeure": 1,
+    "Indemnification": 1
+  },
+  "clauses": [
+    {
+      "clause_id": "C1",
+      "category": "Termination",
+      "snippet": "Upon termination, all outstanding payments shall become immediately due and paya"
+    },
+    {
+      "clause_id": "C2",
+      "category": "Confidentiality",
+      "snippet": "Confidential information exchanged between the parties shall be protected using "
+    },
+    {
+      "clause_id": "C3",
+      "category": "Limitation of Liability",
+      "snippet": "Neither party shall be liable for lost profits, data loss, or business interrupt"
+    },
+    {
+      "clause_id": "C4",
+      "category": "Other",
+      "snippet": "Any modifications to this agreement must be made in writing and signed by author"
+    },
+    {
+      "clause_id": "C5",
+      "category": "Governing Law",
+      "snippet": "The parties consent to the exclusive jurisdiction of the courts in Delaware. The"
+    },
+    {
+      "clause_id": "C6",
+      "category": "Payment Terms",
+      "snippet": "Payment shall be made by wire transfer within 15 days of invoice date. The clien"
+    },
+    {
+      "clause_id": "C7",
+      "category": "Other",
+      "snippet": "Headings in this agreement are for convenience only and shall not affect interpr"
+    },
+    {
+      "clause_id": "C8",
+      "category": "Force Majeure",
+      "snippet": "This agreement is subject to a force majeure provision releasing both parties fr"
+    },
+    {
+      "clause_id": "C9",
+      "category": "Indemnification",
+      "snippet": "Each party shall indemnify and hold harmless the other from any claims, damages,"
+    }
+  ]
+}

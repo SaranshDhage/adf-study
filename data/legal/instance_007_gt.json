@@ -1,0 +1,48 @@
+{
+  "clause_count": 7,
+  "category_counts": {
+    "Force Majeure": 1,
+    "Termination": 1,
+    "Other": 2,
+    "Confidentiality": 1,
+    "Indemnification": 1,
+    "Limitation of Liability": 1
+  },
+  "clauses": [
+    {
+      "clause_id": "C1",
+      "category": "Force Majeure",
+      "snippet": "This agreement is subject to a force majeure provision releasing both parties fr"
+    },
+    {
+      "clause_id": "C2",
+      "category": "Termination",
+      "snippet": "This agreement shall terminate automatically upon expiration of the initial term"
+    },
+    {
+      "clause_id": "C3",
+      "category": "Other",
+      "snippet": "If any provision of this agreement is found unenforceable, the remaining provisi"
+    },
+    {
+      "clause_id": "C4",
+      "category": "Confidentiality",
+      "snippet": "Confidential information exchanged between the parties shall be protected using "
+    },
+    {
+      "clause_id": "C5",
+      "category": "Indemnification",
+      "snippet": "Each party shall indemnify and hold harmless the other from any claims, damages,"
+    },
+    {
+      "clause_id": "C6",
+      "category": "Limitation of Liability",
+      "snippet": "In no event shall either party be liable for indirect, incidental, or consequent"
+    },
+    {
+      "clause_id": "C7",
+      "category": "Other",
+      "snippet": "Any modifications to this agreement must be made in writing and signed by author"
+    }
+  ]
+}

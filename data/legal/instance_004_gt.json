@@ -1,0 +1,59 @@
+{
+  "clause_count": 9,
+  "category_counts": {
+    "Governing Law": 1,
+    "Other": 3,
+    "Payment Terms": 1,
+    "Limitation of Liability": 1,
+    "Indemnification": 1,
+    "Confidentiality": 1,
+    "Force Majeure": 1
+  },
+  "clauses": [
+    {
+      "clause_id": "C1",
+      "category": "Governing Law",
+      "snippet": "This agreement shall be governed by and construed in accordance with the governi"
+    },
+    {
+      "clause_id": "C2",
+      "category": "Other",
+      "snippet": "This contract constitutes the entire agreement between the parties and supersede"
+    },
+    {
+      "clause_id": "C3",
+      "category": "Payment Terms",
+      "snippet": "All invoices shall be paid within 30 days of receipt. Late payments shall incur "
+    },
+    {
+      "clause_id": "C4",
+      "category": "Limitation of Liability",
+      "snippet": "The aggregate liability of either party under this agreement shall not exceed th"
+    },
+    {
+      "clause_id": "C5",
+      "category": "Indemnification",
+      "snippet": "The vendor agrees to indemnify the client against all third-party claims resulti"
+    },
+    {
+      "clause_id": "C6",
+      "category": "Other",
+      "snippet": "Any modifications to this agreement must be made in writing and signed by author"
+    },
+    {
+      "clause_id": "C7",
+      "category": "Confidentiality",
+      "snippet": "All information disclosed under this agreement is confidential and must not be s"
+    },
+    {
+      "clause_id": "C8",
+      "category": "Other",
+      "snippet": "This contract constitutes the entire agreement between the parties and supersede"
+    },
+    {
+      "clause_id": "C9",
+      "category": "Force Majeure",
+      "snippet": "This agreement is subject to a force majeure provision releasing both parties fr"
+    }
+  ]
+}

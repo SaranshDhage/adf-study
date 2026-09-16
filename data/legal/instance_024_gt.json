@@ -1,0 +1,60 @@
+{
+  "clause_count": 9,
+  "category_counts": {
+    "Other": 2,
+    "Confidentiality": 1,
+    "Termination": 1,
+    "Indemnification": 1,
+    "Force Majeure": 1,
+    "Limitation of Liability": 1,
+    "Payment Terms": 1,
+    "Governing Law": 1
+  },
+  "clauses": [
+    {
+      "clause_id": "C1",
+      "category": "Other",
+      "snippet": "The parties agree to negotiate in good faith to resolve any ambiguities in the i"
+    },
+    {
+      "clause_id": "C2",
+      "category": "Confidentiality",
+      "snippet": "The receiving party agrees to maintain the confidentiality of all proprietary da"
+    },
+    {
+      "clause_id": "C3",
+      "category": "Termination",
+      "snippet": "Either party may terminate this agreement with 30 days written notice to the oth"
+    },
+    {
+      "clause_id": "C4",
+      "category": "Other",
+      "snippet": "Headings in this agreement are for convenience only and shall not affect interpr"
+    },
+    {
+      "clause_id": "C5",
+      "category": "Indemnification",
+      "snippet": "Indemnification obligations shall survive the termination of this agreement for "
+    },
+    {
+      "clause_id": "C6",
+      "category": "Force Majeure",
+      "snippet": "This agreement is subject to a force majeure provision releasing both parties fr"
+    },
+    {
+      "clause_id": "C7",
+      "category": "Limitation of Liability",
+      "snippet": "Neither party shall be liable for lost profits, data loss, or business interrupt"
+    },
+    {
+      "clause_id": "C8",
+      "category": "Payment Terms",
+      "snippet": "The parties agree to quarterly invoice cycles with payment due within 45 days. D"
+    },
+    {
+      "clause_id": "C9",
+      "category": "Governing Law",
+      "snippet": "The parties consent to the exclusive jurisdiction of the courts in Delaware. The"
+    }
+  ]
+}

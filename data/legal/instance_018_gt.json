@@ -1,0 +1,65 @@
+{
+  "clause_count": 10,
+  "category_counts": {
+    "Termination": 1,
+    "Governing Law": 1,
+    "Payment Terms": 1,
+    "Other": 3,
+    "Limitation of Liability": 1,
+    "Confidentiality": 1,
+    "Force Majeure": 1,
+    "Indemnification": 1
+  },
+  "clauses": [
+    {
+      "clause_id": "C1",
+      "category": "Termination",
+      "snippet": "Either party may terminate this agreement with 30 days written notice to the oth"
+    },
+    {
+      "clause_id": "C2",
+      "category": "Governing Law",
+      "snippet": "This agreement shall be governed by and construed in accordance with the governi"
+    },
+    {
+      "clause_id": "C3",
+      "category": "Payment Terms",
+      "snippet": "All invoices shall be paid within 30 days of receipt. Late payments shall incur "
+    },
+    {
+      "clause_id": "C4",
+      "category": "Other",
+      "snippet": "Headings in this agreement are for convenience only and shall not affect interpr"
+    },
+    {
+      "clause_id": "C5",
+      "category": "Limitation of Liability",
+      "snippet": "In no event shall either party be liable for indirect, incidental, or consequent"
+    },
+    {
+      "clause_id": "C6",
+      "category": "Confidentiality",
+      "snippet": "All information disclosed under this agreement is confidential and must not be s"
+    },
+    {
+      "clause_id": "C7",
+      "category": "Other",
+      "snippet": "Any modifications to this agreement must be made in writing and signed by author"
+    },
+    {
+      "clause_id": "C8",
+      "category": "Other",
+      "snippet": "Headings in this agreement are for convenience only and shall not affect interpr"
+    },
+    {
+      "clause_id": "C9",
+      "category": "Force Majeure",
+      "snippet": "This agreement is subject to a force majeure provision releasing both parties fr"
+    },
+    {
+      "clause_id": "C10",
+      "category": "Indemnification",
+      "snippet": "Indemnification obligations shall survive the termination of this agreement for "
+    }
+  ]
+}

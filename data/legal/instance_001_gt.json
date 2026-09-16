@@ -1,0 +1,55 @@
+{
+  "clause_count": 8,
+  "category_counts": {
+    "Other": 1,
+    "Indemnification": 1,
+    "Payment Terms": 1,
+    "Termination": 1,
+    "Force Majeure": 1,
+    "Confidentiality": 1,
+    "Limitation of Liability": 1,
+    "Governing Law": 1
+  },
+  "clauses": [
+    {
+      "clause_id": "C1",
+      "category": "Other",
+      "snippet": "This contract constitutes the entire agreement between the parties and supersede"
+    },
+    {
+      "clause_id": "C2",
+      "category": "Indemnification",
+      "snippet": "Indemnification obligations shall survive the termination of this agreement for "
+    },
+    {
+      "clause_id": "C3",
+      "category": "Payment Terms",
+      "snippet": "The parties agree to quarterly invoice cycles with payment due within 45 days. D"
+    },
+    {
+      "clause_id": "C4",
+      "category": "Termination",
+      "snippet": "Either party may terminate this agreement with 30 days written notice to the oth"
+    },
+    {
+      "clause_id": "C5",
+      "category": "Force Majeure",
+      "snippet": "This agreement is subject to a force majeure provision releasing both parties fr"
+    },
+    {
+      "clause_id": "C6",
+      "category": "Confidentiality",
+      "snippet": "All information disclosed under this agreement is confidential and must not be s"
+    },
+    {
+      "clause_id": "C7",
+      "category": "Limitation of Liability",
+      "snippet": "Neither party shall be liable for lost profits, data loss, or business interrupt"
+    },
+    {
+      "clause_id": "C8",
+      "category": "Governing Law",
+      "snippet": "Any dispute under this contract shall be resolved under governing law of England"
+    }
+  ]
+}

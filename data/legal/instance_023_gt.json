@@ -1,0 +1,60 @@
+{
+  "clause_count": 9,
+  "category_counts": {
+    "Other": 2,
+    "Confidentiality": 1,
+    "Limitation of Liability": 1,
+    "Indemnification": 1,
+    "Termination": 1,
+    "Governing Law": 1,
+    "Payment Terms": 1,
+    "Force Majeure": 1
+  },
+  "clauses": [
+    {
+      "clause_id": "C1",
+      "category": "Other",
+      "snippet": "Headings in this agreement are for convenience only and shall not affect interpr"
+    },
+    {
+      "clause_id": "C2",
+      "category": "Confidentiality",
+      "snippet": "Confidential information exchanged between the parties shall be protected using "
+    },
+    {
+      "clause_id": "C3",
+      "category": "Other",
+      "snippet": "The parties agree to negotiate in good faith to resolve any ambiguities in the i"
+    },
+    {
+      "clause_id": "C4",
+      "category": "Limitation of Liability",
+      "snippet": "The aggregate liability of either party under this agreement shall not exceed th"
+    },
+    {
+      "clause_id": "C5",
+      "category": "Indemnification",
+      "snippet": "The vendor agrees to indemnify the client against all third-party claims resulti"
+    },
+    {
+      "clause_id": "C6",
+      "category": "Termination",
+      "snippet": "Upon termination, all outstanding payments shall become immediately due and paya"
+    },
+    {
+      "clause_id": "C7",
+      "category": "Governing Law",
+      "snippet": "Any dispute under this contract shall be resolved under governing law of England"
+    },
+    {
+      "clause_id": "C8",
+      "category": "Payment Terms",
+      "snippet": "All invoices shall be paid within 30 days of receipt. Late payments shall incur "
+    },
+    {
+      "clause_id": "C9",
+      "category": "Force Majeure",
+      "snippet": "This agreement is subject to a force majeure provision releasing both parties fr"
+    }
+  ]
+}

@@ -737,10 +737,14 @@ def _get_next_state_model_chosen(
 # Task definition factories (F1 linear task families)
 # ---------------------------------------------------------------------------
 
-def _make_f1_finance_task_def() -> TaskDefinition:
+def _make_f1_finance_task_def(instance_path: Optional[str] = None) -> TaskDefinition:
     """Build the TaskDefinition for finance_ecl (F1 linear family)."""
     from src.tasks import finance_ecl as task
     from src.harness.fsm import FINANCE_STATE_VALIDATORS
+    import pathlib as _pl
+
+    inst_path = _pl.Path(instance_path) if instance_path else task.DATA_PATH
+    ground_truth = task.reference_run(inst_path)
 
     STATES = ["LOAD_DATA", "VALIDATE_DATA", "CALCULATE", "GENERATE_REPORT"]
     STATE_TOOL = {
@@ -802,7 +806,7 @@ def _make_f1_finance_task_def() -> TaskDefinition:
 
     def make_raw_tools(session: dict) -> dict:
         def data_loader_fn():
-            session["rows"] = task.load_data()
+            session["rows"] = task.load_data(inst_path)
             return session["rows"]
 
         def validation_tool_fn():
@@ -857,16 +861,20 @@ def _make_f1_finance_task_def() -> TaskDefinition:
         worker_map=WORKER_MAP,
         all_workers=["data_worker", "compute_worker", "report_worker"],
         skill_texts=SKILL_TEXTS,
-        ground_truth=task.GROUND_TRUTH,
-        task_prompt=task.TASK_PROMPT,
+        ground_truth=ground_truth,
+        task_prompt=task.TASK_PROMPT.format(data_path=str(inst_path)),
         codegen_env_factory=codegen_env_factory,
     )
 
 
-def _make_f1_legal_task_def() -> TaskDefinition:
+def _make_f1_legal_task_def(instance_path: Optional[str] = None) -> TaskDefinition:
     """Build the TaskDefinition for legal_clause (F1 linear family)."""
     from src.tasks import legal_clause as task
     from src.harness.fsm import LEGAL_STATE_VALIDATORS
+    import pathlib as _pl
+
+    inst_path = _pl.Path(instance_path) if instance_path else task.DATA_PATH
+    ground_truth = task.reference_run(inst_path)
 
     STATES = ["LOAD_DOC", "EXTRACT_CLAUSES", "CLASSIFY", "GENERATE_REPORT"]
     STATE_TOOL = {
@@ -922,7 +930,7 @@ def _make_f1_legal_task_def() -> TaskDefinition:
 
     def make_raw_tools(session: dict) -> dict:
         def document_loader_fn():
-            session["document"] = task.load_document()
+            session["document"] = task.load_document(inst_path)
             return session["document"]
 
         def clause_extractor_fn():
@@ -977,8 +985,8 @@ def _make_f1_legal_task_def() -> TaskDefinition:
         worker_map=WORKER_MAP,
         all_workers=["data_worker", "compute_worker", "report_worker"],
         skill_texts=SKILL_TEXTS,
-        ground_truth=task.GROUND_TRUTH,
-        task_prompt=task.TASK_PROMPT,
+        ground_truth=ground_truth,
+        task_prompt=task.TASK_PROMPT.format(data_path=str(inst_path)),
         codegen_env_factory=codegen_env_factory,
     )
 

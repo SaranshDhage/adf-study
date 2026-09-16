@@ -1,0 +1,55 @@
+{
+  "clause_count": 8,
+  "category_counts": {
+    "Confidentiality": 1,
+    "Governing Law": 1,
+    "Indemnification": 1,
+    "Payment Terms": 1,
+    "Force Majeure": 1,
+    "Other": 1,
+    "Limitation of Liability": 1,
+    "Termination": 1
+  },
+  "clauses": [
+    {
+      "clause_id": "C1",
+      "category": "Confidentiality",
+      "snippet": "All information disclosed under this agreement is confidential and must not be s"
+    },
+    {
+      "clause_id": "C2",
+      "category": "Governing Law",
+      "snippet": "Any dispute under this contract shall be resolved under governing law of England"
+    },
+    {
+      "clause_id": "C3",
+      "category": "Indemnification",
+      "snippet": "Each party shall indemnify and hold harmless the other from any claims, damages,"
+    },
+    {
+      "clause_id": "C4",
+      "category": "Payment Terms",
+      "snippet": "Payment shall be made by wire transfer within 15 days of invoice date. The clien"
+    },
+    {
+      "clause_id": "C5",
+      "category": "Force Majeure",
+      "snippet": "In the event of force majeure, the affected party shall notify the other in writ"
+    },
+    {
+      "clause_id": "C6",
+      "category": "Other",
+      "snippet": "Any modifications to this agreement must be made in writing and signed by author"
+    },
+    {
+      "clause_id": "C7",
+      "category": "Limitation of Liability",
+      "snippet": "In no event shall either party be liable for indirect, incidental, or consequent"
+    },
+    {
+      "clause_id": "C8",
+      "category": "Termination",
+      "snippet": "This agreement shall terminate automatically upon expiration of the initial term"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "clause_count": 8,
+  "category_counts": {
+    "Termination": 1,
+    "Other": 3,
+    "Payment Terms": 1,
+    "Governing Law": 1,
+    "Confidentiality": 1,
+    "Force Majeure": 1
+  },
+  "clauses": [
+    {
+      "clause_id": "C1",
+      "category": "Termination",
+      "snippet": "Either party may terminate this agreement with 30 days written notice to the oth"
+    },
+    {
+      "clause_id": "C2",
+      "category": "Other",
+      "snippet": "If any provision of this agreement is found unenforceable, the remaining provisi"
+    },
+    {
+      "clause_id": "C3",
+      "category": "Payment Terms",
+      "snippet": "All invoices shall be paid within 30 days of receipt. Late payments shall incur "
+    },
+    {
+      "clause_id": "C4",
+      "category": "Other",
+      "snippet": "If any provision of this agreement is found unenforceable, the remaining provisi"
+    },
+    {
+      "clause_id": "C5",
+      "category": "Other",
+      "snippet": "If any provision of this agreement is found unenforceable, the remaining provisi"
+    },
+    {
+      "clause_id": "C6",
+      "category": "Governing Law",
+      "snippet": "The parties consent to the exclusive jurisdiction of the courts in Delaware. The"
+    },
+    {
+      "clause_id": "C7",
+      "category": "Confidentiality",
+      "snippet": "All information disclosed under this agreement is confidential and must not be s"
+    },
+    {
+      "clause_id": "C8",
+      "category": "Force Majeure",
+      "snippet": "In the event of force majeure, the affected party shall notify the other in writ"
+    }
+  ]
+}

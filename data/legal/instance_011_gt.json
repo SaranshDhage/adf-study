@@ -1,0 +1,60 @@
+{
+  "clause_count": 9,
+  "category_counts": {
+    "Termination": 1,
+    "Governing Law": 1,
+    "Force Majeure": 1,
+    "Limitation of Liability": 1,
+    "Other": 2,
+    "Payment Terms": 1,
+    "Indemnification": 1,
+    "Confidentiality": 1
+  },
+  "clauses": [
+    {
+      "clause_id": "C1",
+      "category": "Termination",
+      "snippet": "Either party may terminate this agreement with 30 days written notice to the oth"
+    },
+    {
+      "clause_id": "C2",
+      "category": "Governing Law",
+      "snippet": "This agreement shall be governed by and construed in accordance with the governi"
+    },
+    {
+      "clause_id": "C3",
+      "category": "Force Majeure",
+      "snippet": "Neither party shall be liable for delays caused by events of force majeure, incl"
+    },
+    {
+      "clause_id": "C4",
+      "category": "Limitation of Liability",
+      "snippet": "In no event shall either party be liable for indirect, incidental, or consequent"
+    },
+    {
+      "clause_id": "C5",
+      "category": "Other",
+      "snippet": "If any provision of this agreement is found unenforceable, the remaining provisi"
+    },
+    {
+      "clause_id": "C6",
+      "category": "Payment Terms",
+      "snippet": "Payment shall be made by wire transfer within 15 days of invoice date. The clien"
+    },
+    {
+      "clause_id": "C7",
+      "category": "Indemnification",
+      "snippet": "Each party shall indemnify and hold harmless the other from any claims, damages,"
+    },
+    {
+      "clause_id": "C8",
+      "category": "Confidentiality",
+      "snippet": "The receiving party agrees to maintain the confidentiality of all proprietary da"
+    },
+    {
+      "clause_id": "C9",
+      "category": "Other",
+      "snippet": "This contract constitutes the entire agreement between the parties and supersede"
+    }
+  ]
+}

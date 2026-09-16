@@ -1,0 +1,19 @@
+Clause 1: Each party agrees to keep confidential all proprietary information disclosed under this Agreement and shall not disclose such information to any third party without prior written consent.
+
+Clause 2: Either party may terminate this Agreement upon thirty (30) days written notice to the other party in the event of a material breach that remains uncured.
+
+Clause 3: Client shall remit payment within thirty (30) days of receipt of invoice. Late payments shall accrue interest at 1.5% per month.
+
+Clause 4: Each party shall indemnify and hold harmless the other party from any claims, damages, or losses arising out of a breach of this Agreement.
+
+Clause 5: This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware, and any disputes shall be subject to the exclusive jurisdiction of the courts located therein.
+
+Clause 6: In no event shall either party's total liability under this Agreement exceed the total fees paid in the preceding twelve (12) months.
+
+Clause 7: Neither party shall be liable for any failure to perform due to causes beyond its reasonable control, including acts of God, war, or force majeure events.
+
+Clause 8: All information marked as confidential shall remain the exclusive property of the disclosing party for a period of five (5) years following termination.
+
+Clause 9: This Agreement constitutes the entire understanding between the parties and supersedes all prior agreements, whether written or oral, relating to the subject matter herein.
+
+Clause 10: All invoices must reference the applicable purchase order number and be submitted electronically to accounts@example.com.

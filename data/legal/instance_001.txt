@@ -1,0 +1,8 @@
+Clause 1: This contract constitutes the entire agreement between the parties and supersedes all prior communications.
+Clause 2: Indemnification obligations shall survive the termination of this agreement for a period of three years.
+Clause 3: The parties agree to quarterly invoice cycles with payment due within 45 days. Disputed invoice items must be raised within 10 days.
+Clause 4: Either party may terminate this agreement with 30 days written notice to the other party.
+Clause 5: This agreement is subject to a force majeure provision releasing both parties from obligations made impossible by extraordinary events.
+Clause 6: All information disclosed under this agreement is confidential and must not be shared with third parties without prior written consent.
+Clause 7: Neither party shall be liable for lost profits, data loss, or business interruption even if advised of the possibility of such damages.
+Clause 8: Any dispute under this contract shall be resolved under governing law of England and Wales.

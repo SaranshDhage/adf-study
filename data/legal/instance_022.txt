@@ -1,0 +1,9 @@
+Clause 1: Upon termination, all outstanding payments shall become immediately due and payable.
+Clause 2: Confidential information exchanged between the parties shall be protected using at least the same degree of care as the receiving party uses for its own confidential information.
+Clause 3: Neither party shall be liable for lost profits, data loss, or business interruption even if advised of the possibility of such damages.
+Clause 4: Any modifications to this agreement must be made in writing and signed by authorised representatives of both parties.
+Clause 5: The parties consent to the exclusive jurisdiction of the courts in Delaware. The governing law applicable shall be that of Delaware.
+Clause 6: Payment shall be made by wire transfer within 15 days of invoice date. The client shall not withhold payment for disputed amounts.
+Clause 7: Headings in this agreement are for convenience only and shall not affect interpretation.
+Clause 8: This agreement is subject to a force majeure provision releasing both parties from obligations made impossible by extraordinary events.
+Clause 9: Each party shall indemnify and hold harmless the other from any claims, damages, or costs arising from breach of this agreement.

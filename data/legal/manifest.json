@@ -1,0 +1,375 @@
+{
+  "seed": 42,
+  "n_instances": 26,
+  "instances": {
+    "instance_000": {
+      "instance_idx": 0,
+      "source": "original contract.txt"
+    },
+    "instance_001": {
+      "instance_idx": 1,
+      "n_clauses": 12,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 1
+    },
+    "instance_002": {
+      "instance_idx": 2,
+      "n_clauses": 12,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 3
+    },
+    "instance_003": {
+      "instance_idx": 3,
+      "n_clauses": 11,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 2
+    },
+    "instance_004": {
+      "instance_idx": 4,
+      "n_clauses": 9,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms"
+      ],
+      "n_other": 3
+    },
+    "instance_005": {
+      "instance_idx": 5,
+      "n_clauses": 12,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 2
+    },
+    "instance_006": {
+      "instance_idx": 6,
+      "n_clauses": 13,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 1
+    },
+    "instance_007": {
+      "instance_idx": 7,
+      "n_clauses": 7,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Termination"
+      ],
+      "n_other": 2
+    },
+    "instance_008": {
+      "instance_idx": 8,
+      "n_clauses": 13,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 1
+    },
+    "instance_009": {
+      "instance_idx": 9,
+      "n_clauses": 11,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 1
+    },
+    "instance_010": {
+      "instance_idx": 10,
+      "n_clauses": 8,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 3
+    },
+    "instance_011": {
+      "instance_idx": 11,
+      "n_clauses": 13,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 2
+    },
+    "instance_012": {
+      "instance_idx": 12,
+      "n_clauses": 9,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 2
+    },
+    "instance_013": {
+      "instance_idx": 13,
+      "n_clauses": 12,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 3
+    },
+    "instance_014": {
+      "instance_idx": 14,
+      "n_clauses": 12,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 1
+    },
+    "instance_015": {
+      "instance_idx": 15,
+      "n_clauses": 12,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 2
+    },
+    "instance_016": {
+      "instance_idx": 16,
+      "n_clauses": 7,
+      "categories_present": [
+        "Force Majeure",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms"
+      ],
+      "n_other": 3
+    },
+    "instance_017": {
+      "instance_idx": 17,
+      "n_clauses": 12,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 3
+    },
+    "instance_018": {
+      "instance_idx": 18,
+      "n_clauses": 11,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 3
+    },
+    "instance_019": {
+      "instance_idx": 19,
+      "n_clauses": 13,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 1
+    },
+    "instance_020": {
+      "instance_idx": 20,
+      "n_clauses": 9,
+      "categories_present": [
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 3
+    },
+    "instance_021": {
+      "instance_idx": 21,
+      "n_clauses": 8,
+      "categories_present": [
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 2
+    },
+    "instance_022": {
+      "instance_idx": 22,
+      "n_clauses": 12,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 2
+    },
+    "instance_023": {
+      "instance_idx": 23,
+      "n_clauses": 11,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 2
+    },
+    "instance_024": {
+      "instance_idx": 24,
+      "n_clauses": 12,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 2
+    },
+    "instance_025": {
+      "instance_idx": 25,
+      "n_clauses": 13,
+      "categories_present": [
+        "Confidentiality",
+        "Force Majeure",
+        "Governing Law",
+        "Indemnification",
+        "Limitation of Liability",
+        "Other",
+        "Payment Terms",
+        "Termination"
+      ],
+      "n_other": 2
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "total_ecl": 141524.56,
+  "valid_count": 7,
+  "excluded": [
+    {
+      "loan_id": "INV_023_neg_bal",
+      "reason": "balance must be > 0"
+    },
+    {
+      "loan_id": "INV_023_bad_pd",
+      "reason": "pd must be in [0, 1]"
+    },
+    {
+      "loan_id": "INV_023_bad_lgd",
+      "reason": "lgd must be in [0, 1]"
+    }
+  ],
+  "per_loan": [
+    {
+      "loan_id": "L023_00_high",
+      "ecl": 40375.41
+    },
+    {
+      "loan_id": "L023_01_mid",
+      "ecl": 51439.81
+    },
+    {
+      "loan_id": "L023_01_low",
+      "ecl": 6619.53
+    },
+    {
+      "loan_id": "L023_00_low",
+      "ecl": 3160.07
+    },
+    {
+      "loan_id": "L023_03_low",
+      "ecl": 17328.61
+    },
+    {
+      "loan_id": "L023_00_mid",
+      "ecl": 11458.79
+    },
+    {
+      "loan_id": "L023_02_low",
+      "ecl": 11142.34
+    }
+  ]
+}

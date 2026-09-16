@@ -1,0 +1,8 @@
+Clause 1: Any dispute under this contract shall be resolved under governing law of England and Wales.
+Clause 2: Confidential information exchanged between the parties shall be protected using at least the same degree of care as the receiving party uses for its own confidential information.
+Clause 3: Neither party shall be liable for delays caused by events of force majeure, including natural disasters, war, or pandemics beyond reasonable control.
+Clause 4: Neither party shall be liable for lost profits, data loss, or business interruption even if advised of the possibility of such damages.
+Clause 5: If any provision of this agreement is found unenforceable, the remaining provisions shall continue in full force.
+Clause 6: This agreement shall terminate automatically upon expiration of the initial term unless renewed by mutual written consent.
+Clause 7: Indemnification obligations shall survive the termination of this agreement for a period of three years.
+Clause 8: Payment shall be made by wire transfer within 15 days of invoice date. The client shall not withhold payment for disputed amounts.

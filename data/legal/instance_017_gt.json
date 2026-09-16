@@ -1,0 +1,65 @@
+{
+  "clause_count": 10,
+  "category_counts": {
+    "Termination": 1,
+    "Other": 3,
+    "Force Majeure": 1,
+    "Indemnification": 1,
+    "Payment Terms": 1,
+    "Limitation of Liability": 1,
+    "Confidentiality": 1,
+    "Governing Law": 1
+  },
+  "clauses": [
+    {
+      "clause_id": "C1",
+      "category": "Termination",
+      "snippet": "Upon termination, all outstanding payments shall become immediately due and paya"
+    },
+    {
+      "clause_id": "C2",
+      "category": "Other",
+      "snippet": "Headings in this agreement are for convenience only and shall not affect interpr"
+    },
+    {
+      "clause_id": "C3",
+      "category": "Other",
+      "snippet": "If any provision of this agreement is found unenforceable, the remaining provisi"
+    },
+    {
+      "clause_id": "C4",
+      "category": "Force Majeure",
+      "snippet": "Neither party shall be liable for delays caused by events of force majeure, incl"
+    },
+    {
+      "clause_id": "C5",
+      "category": "Indemnification",
+      "snippet": "Each party shall indemnify and hold harmless the other from any claims, damages,"
+    },
+    {
+      "clause_id": "C6",
+      "category": "Payment Terms",
+      "snippet": "All invoices shall be paid within 30 days of receipt. Late payments shall incur "
+    },
+    {
+      "clause_id": "C7",
+      "category": "Other",
+      "snippet": "This contract constitutes the entire agreement between the parties and supersede"
+    },
+    {
+      "clause_id": "C8",
+      "category": "Limitation of Liability",
+      "snippet": "Neither party shall be liable for lost profits, data loss, or business interrupt"
+    },
+    {
+      "clause_id": "C9",
+      "category": "Confidentiality",
+      "snippet": "All information disclosed under this agreement is confidential and must not be s"
+    },
+    {
+      "clause_id": "C10",
+      "category": "Governing Law",
+      "snippet": "The parties consent to the exclusive jurisdiction of the courts in Delaware. The"
+    }
+  ]
+}

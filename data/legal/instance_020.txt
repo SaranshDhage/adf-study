@@ -1,0 +1,9 @@
+Clause 1: The vendor agrees to indemnify the client against all third-party claims resulting from defective products supplied under this contract.
+Clause 2: Upon termination, all outstanding payments shall become immediately due and payable.
+Clause 3: The parties consent to the exclusive jurisdiction of the courts in Delaware. The governing law applicable shall be that of Delaware.
+Clause 4: Headings in this agreement are for convenience only and shall not affect interpretation.
+Clause 5: The parties agree to quarterly invoice cycles with payment due within 45 days. Disputed invoice items must be raised within 10 days.
+Clause 6: If any provision of this agreement is found unenforceable, the remaining provisions shall continue in full force.
+Clause 7: The parties agree to negotiate in good faith to resolve any ambiguities in the interpretation of this agreement.
+Clause 8: The aggregate liability of either party under this agreement shall not exceed the total fees paid in the preceding 12 months.
+Clause 9: This agreement is subject to a force majeure provision releasing both parties from obligations made impossible by extraordinary events.

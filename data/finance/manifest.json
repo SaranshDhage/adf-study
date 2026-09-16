@@ -1,0 +1,235 @@
+{
+  "seed": 42,
+  "n_instances": 26,
+  "instances": {
+    "instance_000": {
+      "instance_idx": 0,
+      "source": "original portfolio.csv"
+    },
+    "instance_001": {
+      "instance_idx": 1,
+      "n_loans_total": 15,
+      "n_loans_valid": 11,
+      "n_loans_invalid": 4,
+      "n_high_pd": 0,
+      "n_mid_pd": 1,
+      "n_low_pd": 10
+    },
+    "instance_002": {
+      "instance_idx": 2,
+      "n_loans_total": 11,
+      "n_loans_valid": 9,
+      "n_loans_invalid": 2,
+      "n_high_pd": 1,
+      "n_mid_pd": 1,
+      "n_low_pd": 7
+    },
+    "instance_003": {
+      "instance_idx": 3,
+      "n_loans_total": 17,
+      "n_loans_valid": 12,
+      "n_loans_invalid": 5,
+      "n_high_pd": 2,
+      "n_mid_pd": 2,
+      "n_low_pd": 8
+    },
+    "instance_004": {
+      "instance_idx": 4,
+      "n_loans_total": 8,
+      "n_loans_valid": 6,
+      "n_loans_invalid": 2,
+      "n_high_pd": 0,
+      "n_mid_pd": 1,
+      "n_low_pd": 5
+    },
+    "instance_005": {
+      "instance_idx": 5,
+      "n_loans_total": 13,
+      "n_loans_valid": 11,
+      "n_loans_invalid": 2,
+      "n_high_pd": 2,
+      "n_mid_pd": 2,
+      "n_low_pd": 7
+    },
+    "instance_006": {
+      "instance_idx": 6,
+      "n_loans_total": 10,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 2,
+      "n_high_pd": 0,
+      "n_mid_pd": 1,
+      "n_low_pd": 7
+    },
+    "instance_007": {
+      "instance_idx": 7,
+      "n_loans_total": 14,
+      "n_loans_valid": 9,
+      "n_loans_invalid": 5,
+      "n_high_pd": 2,
+      "n_mid_pd": 3,
+      "n_low_pd": 4
+    },
+    "instance_008": {
+      "instance_idx": 8,
+      "n_loans_total": 13,
+      "n_loans_valid": 9,
+      "n_loans_invalid": 4,
+      "n_high_pd": 1,
+      "n_mid_pd": 3,
+      "n_low_pd": 5
+    },
+    "instance_009": {
+      "instance_idx": 9,
+      "n_loans_total": 15,
+      "n_loans_valid": 12,
+      "n_loans_invalid": 3,
+      "n_high_pd": 3,
+      "n_mid_pd": 4,
+      "n_low_pd": 5
+    },
+    "instance_010": {
+      "instance_idx": 10,
+      "n_loans_total": 17,
+      "n_loans_valid": 12,
+      "n_loans_invalid": 5,
+      "n_high_pd": 0,
+      "n_mid_pd": 1,
+      "n_low_pd": 11
+    },
+    "instance_011": {
+      "instance_idx": 11,
+      "n_loans_total": 8,
+      "n_loans_valid": 6,
+      "n_loans_invalid": 2,
+      "n_high_pd": 0,
+      "n_mid_pd": 2,
+      "n_low_pd": 4
+    },
+    "instance_012": {
+      "instance_idx": 12,
+      "n_loans_total": 15,
+      "n_loans_valid": 10,
+      "n_loans_invalid": 5,
+      "n_high_pd": 2,
+      "n_mid_pd": 1,
+      "n_low_pd": 7
+    },
+    "instance_013": {
+      "instance_idx": 13,
+      "n_loans_total": 10,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 2,
+      "n_high_pd": 1,
+      "n_mid_pd": 2,
+      "n_low_pd": 5
+    },
+    "instance_014": {
+      "instance_idx": 14,
+      "n_loans_total": 13,
+      "n_loans_valid": 9,
+      "n_loans_invalid": 4,
+      "n_high_pd": 0,
+      "n_mid_pd": 3,
+      "n_low_pd": 6
+    },
+    "instance_015": {
+      "instance_idx": 15,
+      "n_loans_total": 12,
+      "n_loans_valid": 7,
+      "n_loans_invalid": 5,
+      "n_high_pd": 1,
+      "n_mid_pd": 1,
+      "n_low_pd": 5
+    },
+    "instance_016": {
+      "instance_idx": 16,
+      "n_loans_total": 10,
+      "n_loans_valid": 6,
+      "n_loans_invalid": 4,
+      "n_high_pd": 1,
+      "n_mid_pd": 2,
+      "n_low_pd": 3
+    },
+    "instance_017": {
+      "instance_idx": 17,
+      "n_loans_total": 15,
+      "n_loans_valid": 12,
+      "n_loans_invalid": 3,
+      "n_high_pd": 3,
+      "n_mid_pd": 3,
+      "n_low_pd": 6
+    },
+    "instance_018": {
+      "instance_idx": 18,
+      "n_loans_total": 17,
+      "n_loans_valid": 12,
+      "n_loans_invalid": 5,
+      "n_high_pd": 1,
+      "n_mid_pd": 1,
+      "n_low_pd": 10
+    },
+    "instance_019": {
+      "instance_idx": 19,
+      "n_loans_total": 17,
+      "n_loans_valid": 12,
+      "n_loans_invalid": 5,
+      "n_high_pd": 1,
+      "n_mid_pd": 1,
+      "n_low_pd": 10
+    },
+    "instance_020": {
+      "instance_idx": 20,
+      "n_loans_total": 11,
+      "n_loans_valid": 6,
+      "n_loans_invalid": 5,
+      "n_high_pd": 0,
+      "n_mid_pd": 2,
+      "n_low_pd": 4
+    },
+    "instance_021": {
+      "instance_idx": 21,
+      "n_loans_total": 9,
+      "n_loans_valid": 6,
+      "n_loans_invalid": 3,
+      "n_high_pd": 0,
+      "n_mid_pd": 1,
+      "n_low_pd": 5
+    },
+    "instance_022": {
+      "instance_idx": 22,
+      "n_loans_total": 11,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 3,
+      "n_high_pd": 2,
+      "n_mid_pd": 2,
+      "n_low_pd": 4
+    },
+    "instance_023": {
+      "instance_idx": 23,
+      "n_loans_total": 10,
+      "n_loans_valid": 7,
+      "n_loans_invalid": 3,
+      "n_high_pd": 1,
+      "n_mid_pd": 2,
+      "n_low_pd": 4
+    },
+    "instance_024": {
+      "instance_idx": 24,
+      "n_loans_total": 14,
+      "n_loans_valid": 11,
+      "n_loans_invalid": 3,
+      "n_high_pd": 2,
+      "n_mid_pd": 1,
+      "n_low_pd": 8
+    },
+    "instance_025": {
+      "instance_idx": 25,
+      "n_loans_total": 8,
+      "n_loans_valid": 6,
+      "n_loans_invalid": 2,
+      "n_high_pd": 1,
+      "n_mid_pd": 2,
+      "n_low_pd": 3
+    }
+  }
+}

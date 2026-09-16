@@ -1,0 +1,9 @@
+Clause 1: This contract constitutes the entire agreement between the parties and supersedes all prior communications.
+Clause 2: The receiving party agrees to maintain the confidentiality of all proprietary data and not to disclose confidential materials.
+Clause 3: All invoices shall be paid within 30 days of receipt. Late payments shall incur interest at 1.5% per month.
+Clause 4: In the event of force majeure, the affected party shall notify the other in writing within 5 business days and be excused from performance.
+Clause 5: The vendor agrees to indemnify the client against all third-party claims resulting from defective products supplied under this contract.
+Clause 6: The aggregate liability of either party under this agreement shall not exceed the total fees paid in the preceding 12 months.
+Clause 7: Any modifications to this agreement must be made in writing and signed by authorised representatives of both parties.
+Clause 8: This agreement shall terminate automatically upon expiration of the initial term unless renewed by mutual written consent.
+Clause 9: Any dispute under this contract shall be resolved under governing law of England and Wales.
