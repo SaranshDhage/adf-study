@@ -279,3 +279,52 @@ The Phase 4 guard is cleared. Real API spend may now begin.
 **Stop conditions:** None applicable yet (no data runs).
 **Budget running total:** ~$0.0005.
 **Next:** F1 instance generation → pilot run → full grid.
+
+---
+
+## Session 5 — Bedrock migration (commit d7eee36)
+
+**Date:** 2026-09-17
+**Spent this session:** ~20 API calls for provider checks + 4 live validation runs.
+  No grid data. Total spend: ~$0.01 (Bedrock billing, no ceiling).
+
+### Decision: switched from OpenRouter to AWS Bedrock
+Human approved 2026-09-17. Budget ceiling ($4.00 OpenRouter cap) is dissolved.
+Bedrock billed to project AWS account.
+
+### Bedrock roster (confirmed working, tool-calling validated)
+| Role | Model ID | OpenRouter sub |
+|---|---|---|
+| Small | `amazon.nova-micro-v1:0` | `qwen/qwen-2.5-7b-instruct` |
+| Mid gen-1 | `google.gemma-3-27b-it` | `google/gemma-3-27b-it` (EXACT) |
+| Mid gen-2 | `qwen.qwen3-32b-v1:0` | `qwen/qwen3.8-27b` (~same) |
+| Large | `amazon.nova-pro-v1:0` | `meta-llama/llama-3.3-70b-instruct` |
+| Frontier | *(none)* | dropped (Claude/GPT/Llama = ValidationException) |
+
+### Engineering fix required for Bedrock
+`langchain-aws ChatBedrockConverse` blocks `toolChoice` for Gemma-3-27B and
+Qwen3-32B (incorrect internal allow-list). Direct `boto3.client.converse()` works
+for both. Wrote `BedrockChatModel(BaseChatModel)` that wraps boto3 directly.
+`tool_choice="any"` maps to Bedrock `toolChoice={"any":{}}` (= "required").
+92/92 Phase 4 tests pass.
+
+### ⚠️  OPEN QUESTION FOR HUMAN — rung count
+
+The 3-rung reduction (L0′, L3, L5) was approved solely because of the $4 budget
+cap. That cap is gone. The preregistration (PREREGISTRATION.md §5) requires ≥6 rungs.
+
+**With unlimited Bedrock budget, do you want to restore the full ≥6 rung grid?**
+
+Cost estimate for the full grid (all 8 rungs, 2 families, 4 models, N=50):
+  8 × 2 × 4 × 50 = 3,200 runs.
+  Rough cost at ~6,000 tokens/run × ~$1/1M tokens (Nova-Micro) to ~$8/1M (Nova-Pro):
+  Low end (all Nova-Micro): ~$0.10.  Realistic blended: ~$5–15 total.
+  These are Bedrock on-demand prices; exact cost depends on actual token lengths.
+
+If you say yes, I'll update the grid to ≥6 rungs (L0′, L1, L2, L3, L4, L5) and
+the pilot to cover all 6 rungs at N=10 before the full N=50 grid.
+
+### Next after rung decision
+1. F1 instance generation (≥20 per family) — still only 1 instance each.
+2. Pilot run: 1 model, 1 family, pilot rungs, N=10.
+3. Full grid.
