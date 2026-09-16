@@ -1,0 +1,280 @@
+{
+  "seed": 42,
+  "n_instances": 30,
+  "n_linear": 15,
+  "n_branching": 15,
+  "escalation_threshold": 0.15,
+  "stress_pd_multiplier": 2.0,
+  "instances": {
+    "instance_000": {
+      "instance_idx": 0,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_001": {
+      "instance_idx": 1,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_002": {
+      "instance_idx": 2,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_003": {
+      "instance_idx": 3,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_004": {
+      "instance_idx": 4,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_005": {
+      "instance_idx": 5,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_006": {
+      "instance_idx": 6,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_007": {
+      "instance_idx": 7,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_008": {
+      "instance_idx": 8,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_009": {
+      "instance_idx": 9,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_010": {
+      "instance_idx": 10,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_011": {
+      "instance_idx": 11,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_012": {
+      "instance_idx": 12,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_013": {
+      "instance_idx": 13,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_014": {
+      "instance_idx": 14,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_015": {
+      "instance_idx": 15,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_016": {
+      "instance_idx": 16,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_017": {
+      "instance_idx": 17,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_018": {
+      "instance_idx": 18,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_019": {
+      "instance_idx": 19,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_020": {
+      "instance_idx": 20,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_021": {
+      "instance_idx": 21,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_022": {
+      "instance_idx": 22,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_023": {
+      "instance_idx": 23,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_024": {
+      "instance_idx": 24,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_025": {
+      "instance_idx": 25,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_026": {
+      "instance_idx": 26,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    },
+    "instance_027": {
+      "instance_idx": 27,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_028": {
+      "instance_idx": 28,
+      "required_path": "linear",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 0,
+      "escalation_threshold": 0.15
+    },
+    "instance_029": {
+      "instance_idx": 29,
+      "required_path": "branching",
+      "n_loans_total": 12,
+      "n_loans_valid": 8,
+      "n_loans_invalid": 4,
+      "n_high_risk": 2,
+      "escalation_threshold": 0.15
+    }
+  }
+}

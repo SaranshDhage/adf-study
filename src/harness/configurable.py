@@ -170,7 +170,12 @@ class TaskDefinition:
     skill_texts: dict               # skill_level -> str
     ground_truth: Any
     task_prompt: str
-    codegen_env_factory: Callable   # (session) -> dict of names for exec() env
+    codegen_env_factory: Callable
+    linear_states: Any = None  # Optional[list]: if set, fsm_fixed uses this shorter
+                               # sequence instead of `states`.  Used by branching tasks
+                               # to enforce a linear path at ADF≈0, which cannot handle
+                               # data-dependent branches — the mechanism for H2 failure
+                               # at the over-constrained end.   # (session) -> dict of names for exec() env
 
 
 # ---------------------------------------------------------------------------
@@ -236,7 +241,13 @@ def _plan_phase(
 ) -> tuple[Any, bool, int]:
     """Execute the plan phase.  Returns (plan_content, plan_valid, retries)."""
     import pathlib as _pl
-    states = task_def.states
+    # For schema_validated plans on branching tasks, validate against the
+    # linear_states sequence (the FSM the constrained harness actually runs).
+    states = (
+        task_def.linear_states
+        if (cfg.state_mode == "fsm_fixed" and task_def.linear_states is not None)
+        else task_def.states
+    )
     state_tool = task_def.state_tool_map
     _data_root = _pl.Path(__file__).resolve().parents[2] / "data"
     try:
@@ -970,21 +981,227 @@ def _make_f1_legal_task_def() -> TaskDefinition:
     )
 
 
+def _make_f2_branching_task_def(instance_path: Optional[str] = None) -> TaskDefinition:
+    """Build the TaskDefinition for branching_ecl (F2 family).
+
+    instance_path: path to a specific generated portfolio CSV.  If None, uses
+    the first available instance in data/branching/.
+    """
+    from src.tasks import branching_ecl as task
+    from src.adf.metric import TaskSpec
+    import pathlib as _pl
+
+    if instance_path is None:
+        paths = task.get_instance_paths()
+        if not paths:
+            raise FileNotFoundError(
+                "No branching instances found. "
+                "Run: python -m src.harness.gen_branching_instances"
+            )
+        inst_path = paths[0]
+    else:
+        inst_path = _pl.Path(instance_path)
+
+    ground_truth = task.load_ground_truth(inst_path)
+
+    BRANCHING_SPEC = TaskSpec(
+        name="branching_ecl",
+        nominal_steps=5,
+        n_states=6,
+        n_agents=3,
+        n_tools=5,
+        enum_arity=4,
+        subset_size=2,
+    )
+
+    FULL_STATES = [
+        "LOAD_DATA", "VALIDATE_DATA", "CALCULATE", "ESCALATION", "GENERATE_REPORT"
+    ]
+    LINEAR_STATES = ["LOAD_DATA", "VALIDATE_DATA", "CALCULATE", "GENERATE_REPORT"]
+
+    STATE_TOOL = {
+        "LOAD_DATA":       "data_loader",
+        "VALIDATE_DATA":   "validation_tool",
+        "CALCULATE":       "calculator_tool",
+        "ESCALATION":      "escalation_tool",
+        "GENERATE_REPORT": "report_generator",
+    }
+    ALL_TOOLS = [
+        "data_loader", "validation_tool", "calculator_tool",
+        "escalation_tool", "report_generator",
+    ]
+    DESCRIPTIONS = {
+        "data_loader":      "Loads the loan portfolio into the working context.",
+        "validation_tool":  "Validates loans: balance>0, pd in [0,1], lgd in [0,1].",
+        "calculator_tool":  "Computes ECL=balance*pd*lgd per valid loan.",
+        "escalation_tool":  (
+            "Stress-test review for high-risk loans (PD > 0.15). "
+            "Call this if any valid loan has PD > 0.15."
+        ),
+        "report_generator": "Assembles final report. Call last.",
+    }
+    STATE_SUBSETS = {
+        "LOAD_DATA":       ["data_loader", "validation_tool"],
+        "VALIDATE_DATA":   ["data_loader", "validation_tool"],
+        "CALCULATE":       ["validation_tool", "calculator_tool"],
+        "ESCALATION":      ["calculator_tool", "escalation_tool"],
+        "GENERATE_REPORT": ["escalation_tool", "report_generator"],
+    }
+    WORKER_MAP_BR = {
+        "LOAD_DATA":       "data_worker",
+        "VALIDATE_DATA":   "data_worker",
+        "CALCULATE":       "compute_worker",
+        "ESCALATION":      "compute_worker",
+        "GENERATE_REPORT": "report_worker",
+    }
+    VALIDATORS_BR = {
+        "LOAD_DATA": lambda r: (
+            isinstance(r, list)
+            and all(isinstance(x, dict) and {"loan_id","balance","pd","lgd"} <= x.keys()
+                    for x in r)
+        ),
+        "VALIDATE_DATA": lambda r: (
+            isinstance(r, dict)
+            and isinstance(r.get("valid"), list)
+            and isinstance(r.get("excluded"), list)
+        ),
+        "CALCULATE": lambda r: (
+            isinstance(r, dict)
+            and isinstance(r.get("per_loan"), list)
+            and isinstance(r.get("total_ecl"), (int, float))
+        ),
+        "ESCALATION": lambda r: (
+            isinstance(r, dict) and "high_risk_count" in r
+            and isinstance(r.get("stress_results"), list)
+        ),
+        "GENERATE_REPORT": lambda r: (
+            isinstance(r, dict)
+            and {"total_ecl","valid_count","excluded","per_loan","requires_escalation"}
+            <= r.keys()
+        ),
+    }
+    SKILL_TEXTS_BR = {
+        "none": "",
+        "vague": (
+            "You are a credit risk specialist. Use domain knowledge to execute each "
+            "step correctly and determine if escalation review is needed."
+        ),
+        "precise": (
+            "Branching IFRS-9 ECL pipeline:\n"
+            "1. LOAD_DATA: call data_loader.\n"
+            "2. VALIDATE_DATA: call validation_tool.\n"
+            "3. CALCULATE: call calculator_tool (ECL=balance×pd×lgd).\n"
+            "4. ESCALATION (CONDITIONAL): call escalation_tool IF AND ONLY IF "
+            "any valid loan has PD > 0.15. REQUIRED for high-risk portfolios, "
+            "MUST NOT be skipped when PD > 0.15 is present.\n"
+            "5. GENERATE_REPORT: call report_generator (include escalation if done).\n"
+            "Do NOT call escalation_tool when all loans have PD ≤ 0.15."
+        ),
+    }
+
+    def make_raw_tools(session: dict) -> dict:
+        def data_loader_fn():
+            session["rows"] = task.load_data(inst_path)
+            return session["rows"]
+
+        def validation_tool_fn():
+            if "rows" not in session:
+                raise ValueError("data_loader must be called first")
+            valid, excluded = task.validate_data(session["rows"])
+            session["valid"] = valid
+            session["excluded"] = excluded
+            return {"valid": valid, "excluded": excluded}
+
+        def calculator_tool_fn():
+            if "valid" not in session:
+                raise ValueError("validation_tool must be called first")
+            calc = task.calculate_ecl(session["valid"])
+            session["calc"] = calc
+            return calc
+
+        def escalation_tool_fn():
+            if "valid" not in session:
+                raise ValueError("validation_tool must be called first")
+            esc = task.escalation_review(session["valid"])
+            session["escalation"] = esc
+            return esc
+
+        def report_generator_fn():
+            if "calc" not in session or "excluded" not in session:
+                raise ValueError("calculator_tool must be called first")
+            return task.generate_report(
+                session["calc"], session["excluded"], session.get("escalation")
+            )
+
+        return {
+            "data_loader":      data_loader_fn,
+            "validation_tool":  validation_tool_fn,
+            "calculator_tool":  calculator_tool_fn,
+            "escalation_tool":  escalation_tool_fn,
+            "report_generator": report_generator_fn,
+        }
+
+    def codegen_env_factory_br(session: dict) -> dict:
+        return {
+            "load_data":            lambda: task.load_data(inst_path),
+            "validate_data":        task.validate_data,
+            "calculate_ecl":        task.calculate_ecl,
+            "escalation_review":    task.escalation_review,
+            "generate_report":      task.generate_report,
+            "ESCALATION_THRESHOLD": task.ESCALATION_THRESHOLD,
+            "session":              session,
+        }
+
+    resolved_prompt = task.TASK_PROMPT.replace("{data_path}", str(inst_path))
+
+    return TaskDefinition(
+        name="branching_ecl",
+        task_spec=BRANCHING_SPEC,
+        states=FULL_STATES,
+        state_tool_map=STATE_TOOL,
+        state_tool_subsets=STATE_SUBSETS,
+        all_tool_names=ALL_TOOLS,
+        tool_descriptions=DESCRIPTIONS,
+        make_raw_tools=make_raw_tools,
+        validators=VALIDATORS_BR,
+        report_state="GENERATE_REPORT",
+        worker_map=WORKER_MAP_BR,
+        all_workers=["data_worker", "compute_worker", "report_worker"],
+        skill_texts=SKILL_TEXTS_BR,
+        ground_truth=ground_truth,
+        task_prompt=resolved_prompt,
+        codegen_env_factory=codegen_env_factory_br,
+        linear_states=LINEAR_STATES,  # ADF≈0 configs use the 4-state linear FSM
+    )
+
+
 # Registry of built-in task definitions
 _TASK_DEF_REGISTRY: dict[str, Callable[[], TaskDefinition]] = {
-    "finance_ecl": _make_f1_finance_task_def,
-    "legal_clause": _make_f1_legal_task_def,
+    "finance_ecl":   _make_f1_finance_task_def,
+    "legal_clause":  _make_f1_legal_task_def,
+    "branching_ecl": _make_f2_branching_task_def,
 }
 
 
-def get_task_definition(task_name: str) -> TaskDefinition:
-    """Look up a built-in task definition by name."""
+def get_task_definition(
+    task_name: str,
+    instance_path: Optional[str] = None,
+) -> TaskDefinition:
+    """Look up a built-in task definition by name.
+
+    instance_path is passed to factory functions that support per-instance
+    configuration (currently branching_ecl).
+    """
     if task_name not in _TASK_DEF_REGISTRY:
         raise KeyError(
             f"Unknown task '{task_name}'. "
             f"Available: {list(_TASK_DEF_REGISTRY.keys())}"
         )
-    return _TASK_DEF_REGISTRY[task_name]()
+    factory = _TASK_DEF_REGISTRY[task_name]
+    try:
+        return factory(instance_path)  # type: ignore[call-arg]
+    except TypeError:
+        return factory()  # F1 factories take no args
 
 
 def register_task_definition(name: str, factory: Callable[[], TaskDefinition]) -> None:
@@ -1108,8 +1325,16 @@ def run_configurable(
         if run_error is None:
             if cfg.state_mode == "fsm_fixed":
                 # ---- FSM-fixed execution loop --------------------------
+                # Branching tasks supply a `linear_states` field: the FSM
+                # uses the shorter linear path (no ESCALATION), which cannot
+                # satisfy branching instances — the H2 failure mechanism.
+                fsm_states = (
+                    task_def.linear_states
+                    if task_def.linear_states is not None
+                    else task_def.states
+                )
                 last_state = "START"
-                for step_i, state in enumerate(task_def.states):
+                for step_i, state in enumerate(fsm_states):
                     agent = _routing_phase(
                         cfg, task_def, state, step_i, history, llm, logger, totals
                     )

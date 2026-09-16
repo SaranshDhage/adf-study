@@ -1,0 +1,75 @@
+{
+  "total_ecl": 166934.22,
+  "valid_count": 8,
+  "excluded": [
+    {
+      "loan_id": "BAD_009_A",
+      "reason": "balance must be > 0"
+    },
+    {
+      "loan_id": "BAD_009_B",
+      "reason": "pd must be in [0, 1]"
+    },
+    {
+      "loan_id": "BAD_009_C",
+      "reason": "lgd must be in [0, 1]"
+    },
+    {
+      "loan_id": "BAD_009_D",
+      "reason": "balance must be > 0"
+    }
+  ],
+  "per_loan": [
+    {
+      "loan_id": "L009_04",
+      "ecl": 12070.39
+    },
+    {
+      "loan_id": "L009_01",
+      "ecl": 13474.82
+    },
+    {
+      "loan_id": "L009_05",
+      "ecl": 10051.31
+    },
+    {
+      "loan_id": "L009_H00",
+      "ecl": 24537.94
+    },
+    {
+      "loan_id": "L009_00",
+      "ecl": 16972.98
+    },
+    {
+      "loan_id": "L009_H01",
+      "ecl": 73681.32
+    },
+    {
+      "loan_id": "L009_02",
+      "ecl": 13871.53
+    },
+    {
+      "loan_id": "L009_03",
+      "ecl": 2273.93
+    }
+  ],
+  "requires_escalation": true,
+  "escalation": {
+    "high_risk_count": 2,
+    "stress_results": [
+      {
+        "loan_id": "L009_H00",
+        "pd_original": 0.2211,
+        "pd_stress": 0.4422,
+        "ecl_stress": 49075.88
+      },
+      {
+        "loan_id": "L009_H01",
+        "pd_original": 0.3821,
+        "pd_stress": 0.7642,
+        "ecl_stress": 147362.64
+      }
+    ],
+    "total_stress_ecl": 196438.52
+  }
+}
