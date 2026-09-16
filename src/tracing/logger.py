@@ -88,6 +88,128 @@ class TraceLogger:
         )
         self._call_index += 1
 
+    def log_adf_config(
+        self,
+        cfg_dict: dict,
+        adf_total: float,
+        adf_rate: float,
+        n_decision_points: int,
+        per_layer: dict,
+        proxy: int,
+    ) -> None:
+        """Log the HarnessConfig and its computed ADF at run start.
+        Emitted once per run, immediately after run_start.
+        """
+        self._write(
+            "adf_config",
+            harness_config=cfg_dict,
+            adf_total=adf_total,
+            adf_rate=adf_rate,
+            n_decision_points=n_decision_points,
+            per_layer=per_layer,
+            proxy=proxy,
+        )
+
+    def log_routing_decision(
+        self,
+        step_index: int,
+        state: str,
+        mode: str,
+        agent_name: str,
+        candidates: list,
+    ) -> None:
+        """Log the routing decision for one step (fixed or model-chosen)."""
+        self._write(
+            "routing_decision",
+            step_index=step_index,
+            state=state,
+            mode=mode,
+            agent_name=agent_name,
+            candidates=candidates,
+        )
+
+    def log_skill_load(
+        self,
+        agent_name: str,
+        skill_level: str,
+        skill_hash: str,
+    ) -> None:
+        """Log which skill file was loaded for an agent."""
+        self._write(
+            "skill_load",
+            agent_name=agent_name,
+            skill_level=skill_level,
+            skill_hash=skill_hash,
+        )
+
+    def log_step_attempt(
+        self,
+        step_index: int,
+        state: str,
+        attempt: int,
+        tool_called: Optional[str],
+        args: dict,
+        result: Any,
+        valid: bool,
+        error: Optional[str],
+    ) -> None:
+        """Log a single tool-call attempt within a step (all attempts retained,
+        including failures — see loop_eng.md §1 rule 5).
+        """
+        self._write(
+            "step_attempt",
+            step_index=step_index,
+            state=state,
+            attempt=attempt,
+            tool_called=tool_called,
+            args=args,
+            args_hash=hash_obj(args),
+            result=result,
+            result_hash=hash_obj(result),
+            valid=valid,
+            error=error,
+        )
+
+    def log_state_choice(
+        self,
+        step_index: int,
+        mode: str,
+        chosen: str,
+        candidates: list,
+        raw_response: str = "",
+    ) -> None:
+        """Log a state-selection decision (model_chosen mode)."""
+        self._write(
+            "state_choice",
+            step_index=step_index,
+            mode=mode,
+            chosen=chosen,
+            candidates=candidates,
+            raw_response=raw_response[:500],  # truncate to keep log manageable
+        )
+
+    def log_codegen_attempt(
+        self,
+        step_index: int,
+        state: str,
+        attempt: int,
+        code: str,
+        result: Any,
+        error: Optional[str],
+    ) -> None:
+        """Log a codegen substrate attempt: code written + execution outcome."""
+        self._write(
+            "codegen_attempt",
+            step_index=step_index,
+            state=state,
+            attempt=attempt,
+            code=code,
+            code_hash=hash_obj(code),
+            result=result,
+            result_hash=hash_obj(result),
+            error=error,
+        )
+
     def log_run_end(
         self,
         final_output: Any,
