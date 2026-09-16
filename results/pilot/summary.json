@@ -1,0 +1,74 @@
+{
+  "L0": {
+    "n_runs": 20,
+    "n_valid": 20,
+    "n_success": 16,
+    "tsr": 0.8,
+    "adf_rate": 0.38095238095238093,
+    "adf_total": 8.0,
+    "avg_total_tokens": 7895.2
+  },
+  "L0prime": {
+    "n_runs": 20,
+    "n_valid": 20,
+    "n_success": 15,
+    "tsr": 0.75,
+    "adf_rate": 0.0,
+    "adf_total": 0.0,
+    "avg_total_tokens": 7409.1
+  },
+  "L1": {
+    "n_runs": 20,
+    "n_valid": 20,
+    "n_success": 16,
+    "tsr": 0.8,
+    "adf_rate": 0.8571428571428571,
+    "adf_total": 18.0,
+    "avg_total_tokens": 7731.9
+  },
+  "L2": {
+    "n_runs": 20,
+    "n_valid": 20,
+    "n_success": 16,
+    "tsr": 0.8,
+    "adf_rate": 1.1590404763278392,
+    "adf_total": 24.339850002884624,
+    "avg_total_tokens": 12738.2
+  },
+  "L3": {
+    "n_runs": 20,
+    "n_valid": 20,
+    "n_success": 15,
+    "tsr": 0.75,
+    "adf_rate": 1.920945238232601,
+    "adf_total": 40.339850002884624,
+    "avg_total_tokens": 13329.9
+  },
+  "L4": {
+    "n_runs": 20,
+    "n_valid": 20,
+    "n_success": 13,
+    "tsr": 0.65,
+    "adf_rate": 2.3632172563063842,
+    "adf_total": 49.62756238243407,
+    "avg_total_tokens": 20934.2
+  },
+  "L5": {
+    "n_runs": 20,
+    "n_valid": 20,
+    "n_success": 9,
+    "tsr": 0.45,
+    "adf_rate": 3.56739403628493,
+    "adf_total": 74.91527476198353,
+    "avg_total_tokens": 21975.2
+  },
+  "L6": {
+    "n_runs": 20,
+    "n_valid": 20,
+    "n_success": 15,
+    "tsr": 0.75,
+    "adf_rate": 3.75787022676112,
+    "adf_total": 78.91527476198353,
+    "avg_total_tokens": 23282.4
+  }
+}

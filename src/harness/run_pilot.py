@@ -142,14 +142,14 @@ def log_discard(
 # -----------------------------------------------------------------------
 
 def load_completed(runs_path: Path) -> set[tuple]:
-    """Return a set of (rung, instance_stem, repeat) already in runs.jsonl."""
+    """Return a set of (family, rung, instance_stem, repeat) already in runs.jsonl."""
     done: set[tuple] = set()
     if not runs_path.exists():
         return done
     for line in runs_path.read_text(encoding="utf-8").splitlines():
         if line.strip():
             rec = json.loads(line)
-            done.add((rec["rung"], rec["instance"], rec["repeat"]))
+            done.add((rec["family"], rec["rung"], rec["instance"], rec["repeat"]))
     return done
 
 # -----------------------------------------------------------------------
@@ -253,7 +253,7 @@ def run_pilot(
     total_planned = len(rungs) * n
     total_done    = sum(
         1 for rung in rungs for i, inst in enumerate(inst_pool)
-        if (rung, inst.stem, i) in done
+        if (family, rung, inst.stem, i) in done
     )
 
     print(f"\nPilot: model={model}  family={family}  rungs={rungs}  N={n}")
@@ -274,7 +274,7 @@ def run_pilot(
         print(f"\n  Rung {rung}:")
 
         for rep, inst in enumerate(inst_pool):
-            key = (rung, inst.stem, rep)
+            key = (family, rung, inst.stem, rep)
             if key in done:
                 print(f"    [{inst.stem}/r{rep}] skip (already done)")
                 continue

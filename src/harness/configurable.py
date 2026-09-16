@@ -604,19 +604,53 @@ def _execute_step(
                 validator, codegen_env, totals, logger,
             )
         elif cfg.action_substrate == "hybrid":
-            # Try to detect whether the model writes a code block or makes a
-            # tool call.  First, let the model respond freely (no tool_choice).
+            # Let the model respond freely: it may call a tool OR write code.
+            # BUG-FIX: original code called _tool_call_attempt after getting
+            # a response (double-LLM-call); the second call confused models.
+            # Now: handle the first response directly — no second LLM call.
             resp = llm.bind_tools(lc_tools).invoke(step_msgs)
             accumulate_usage(resp, totals)
             step_msgs = step_msgs + [resp]
 
             if resp.tool_calls:
-                # Route through tool-call path
-                ta, step_msgs = _tool_call_attempt(
-                    step_index, state, attempt_i, lc_tools,
-                    cfg.tool_mode, forced_tool, list(step_msgs[:-1]) + [resp],
-                    llm, validator, totals, logger,
-                )
+                # Model chose tool-call path; execute without re-invoking LLM.
+                call = resp.tool_calls[0]
+                tool_name = call["name"]
+                tool_args = call.get("args", {})
+                tool_obj = next((t for t in lc_tools if t.name == tool_name), None)
+
+                if tool_obj is None:
+                    available = [t.name for t in lc_tools]
+                    err = f"model called '{tool_name}', not in {available}"
+                    ta = ToolAttempt(attempt=attempt_i, tool_called=tool_name,
+                                     args=tool_args, result=None, valid=False, error=err)
+                    logger.log_step_attempt(step_index, state, attempt_i,
+                                            tool_name, tool_args, None, False, err)
+                    step_msgs = step_msgs + [
+                        ToolMessage(content=f"'{tool_name}' not available.",
+                                    tool_call_id=call["id"]),
+                        HumanMessage(content=f"Choose from: {available}."),
+                    ]
+                else:
+                    try:
+                        result = tool_obj.invoke(tool_args)
+                    except Exception as exc:  # noqa: BLE001
+                        result = {"error": str(exc)}
+                    valid = validator(result)
+                    error = None if valid else f"{tool_name} output failed validation"
+                    ta = ToolAttempt(attempt=attempt_i, tool_called=tool_name,
+                                     args=tool_args, result=result, valid=valid,
+                                     error=error)
+                    logger.log_step_attempt(step_index, state, attempt_i,
+                                            tool_name, tool_args, result, valid, error)
+                    step_msgs = step_msgs + [
+                        ToolMessage(content=json.dumps(result, default=str),
+                                    tool_call_id=call["id"])
+                    ]
+                    if not valid:
+                        step_msgs = step_msgs + [
+                            HumanMessage(content="Output failed validation. Try again.")
+                        ]
             else:
                 # Try codegen path
                 code = resp.content
