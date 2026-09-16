@@ -75,3 +75,22 @@ is affordable at roughly $0.05-0.30 and proceeds as planned. The full grid needs
 budget decision before Phase 6.2 — per Rule "reduce ADF rungs, never N per cell."
 
 **Next:** Phase 2 — configurable harness.
+
+---
+
+## 2026-09-16 — Phase 2 started: code vendored, provider risk cleared
+
+**Spent:** ~$0.0005 (5 diagnostic calls, not experimental data).
+
+- Vendored 1,823 lines from `Harness_Engg-1` per plan section 3 (FSM, validation gate,
+  tracing, F1 tasks + scorers, analysis, data). Provenance in `NOTICE.md`.
+- `docs/provider_pinning.md` — provider **and quantization** pinned per model.
+
+### Blocker found and cleared
+The prior paper recorded that Phala corrupts JSON on `tool_choice="required"` for
+`qwen-2.5-7b-instruct` (3/3). Phala is that model's **only** OpenRouter provider, and
+the ADF~0 rung requires forced tool selection — so the small tier could not have run
+the most constrained condition, and the frozen roster would have needed a substitution.
+**Re-tested: fixed, 3/3 pass.** Roster stands unchanged. Re-verify before the full grid.
+
+**Next:** `src/harness/configurable.py` — the config-driven executor.
