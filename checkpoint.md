@@ -48,3 +48,30 @@ verification, OpenRouter roster availability check.
 
 **Stop conditions:** none applicable yet (Phase 1).
 **Next:** resolve D1-D4 -> write and commit `PREREGISTRATION.md` -> Phase 2.
+
+---
+
+## 2026-09-16 — Phase 1 COMPLETE: preregistration committed
+
+**PREREGISTRATION.md frozen at commit `34b1a3786ec8d58a885dad7281755a0f984f8b6c`**
+(2026-09-16 16:18:16 +0530). Hypotheses, metrics, ADF formula, and significance
+threshold are now immutable. Engineering remains free to change.
+
+### D1-D4 resolved
+- **D1 Budget:** deferred. OpenRouter balance verified at **$4.446** ($5.00 credited,
+  $0.554 used). Cost-guard hard ceiling set to **$4.00**, leaving $0.45 reserve.
+  Phases 2-4 are zero-spend by design, so this does not block the build.
+- **D2 Scope:** F0 (tau2-bench) + F1 (linear) + F2 (branching). F3/F4/F5 out of
+  confirmatory scope; exploratory extension only if built later.
+- **D3 F3/F4 user simulator:** no user simulator (single-shot pipelines) when built.
+- **D4 Measures:** accepted as specified — H3 on ADF_rate only.
+
+### Budget consequence (flagged, not blocking)
+At $4.00 the preregistered full grid (N>=50 x 3 families x 4 models x >=6 rungs
+~= 3,600+ multi-turn runs) is **not affordable**. Cheapest roster model is
+$0.10/1M input tokens, but tau2-bench episodes are multi-turn with a user
+simulator on top. The pilot (section 6.1: 1 model, 1 family, 5 rungs, N=10 = 50 runs)
+is affordable at roughly $0.05-0.30 and proceeds as planned. The full grid needs a
+budget decision before Phase 6.2 — per Rule "reduce ADF rungs, never N per cell."
+
+**Next:** Phase 2 — configurable harness.
