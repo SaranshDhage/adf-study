@@ -402,7 +402,9 @@ def _tool_call_attempt(
     """Execute one tool-calling attempt.  Returns (ToolAttempt, updated_messages)."""
     bind_kwargs: dict = {}
     if tool_mode == "forced_single":
-        bind_kwargs["tool_choice"] = "required"
+        # Bedrock Converse API: "any" = must call one of the provided tools.
+        # (OpenAI used "required"; LangChain-AWS maps "any" → toolChoice={"any":{}})
+        bind_kwargs["tool_choice"] = "any"
     llm_bound = llm.bind_tools(lc_tools, **bind_kwargs)
 
     resp = llm_bound.invoke(state_messages)

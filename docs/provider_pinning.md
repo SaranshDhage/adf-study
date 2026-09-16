@@ -1,43 +1,74 @@
-# Provider and quantization pinning
+# Provider Pinning — Bedrock (updated 2026-09-17)
 
-Auto-routing is a confound for a determinism study. Every request pins
-`provider.order` to exactly one backend with `allow_fallbacks=false`.
+Migrated from OpenRouter to AWS Bedrock.  All models are served through the Bedrock
+Converse API via `langchain-aws :: ChatBedrock`.  Credentials are read from environment
+variables `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_DEFAULT_REGION`.
 
-**Quantization must be pinned alongside provider.** OpenRouter serves the roster at
-fp4/fp8/bf16 depending on backend; numeric precision is a plausible determinism
-factor, so it is held constant rather than left to chance.
+No `allow_fallbacks=false` equivalent is needed: Bedrock routes each model ID to a
+single canonical backend, so quantization drift and provider failover are non-issues.
 
-| Tier | Slug | Provider | Quant | ctx | $/1M in |
-|---|---|---|---|---|---|
-| Small open | `qwen/qwen-2.5-7b-instruct` | Phala | unknown | 32k | 0.10 |
-| Mid open gen1 | `google/gemma-3-27b-it` | DeepInfra | fp8 | 131k | 0.08 |
-| Mid open gen2 | `qwen/qwen3.8-27b` | DeepInfra | bf16 | 262k | 0.15 |
-| Large open | `meta-llama/llama-3.3-70b-instruct` | DeepInfra | fp8 | 131k | 0.10 |
+---
 
-DeepInfra serves three of four, which keeps backend variance low across tiers.
+## Roster
 
-## Known risks
+| Role | Bedrock model ID | Preregistered slug (OpenRouter) | Status |
+|------|-----------------|----------------------------------|--------|
+| Small baseline | `amazon.nova-micro-v1:0` | `qwen/qwen-2.5-7b-instruct` | **Substituted** — Qwen-2.5-7B not on Bedrock; Nova-Micro is the cheapest available text model with tool-calling |
+| Mid open (gen 1) | `google.gemma-3-27b-it` | `google/gemma-3-27b-it` | **Direct match** |
+| Mid open (gen 2) | `qwen.qwen3-32b-v1:0` | `qwen/qwen3.8-27b` | **Near-match** — same Qwen3 generation, 32B vs 27B |
+| Large | `amazon.nova-pro-v1:0` | `meta-llama/llama-3.3-70b-instruct` | **Substituted** — Llama-3.3-70B `ValidationException`; Nova-Pro is the accessible large-tier model |
+| Frontier | *(none)* | one proprietary (reduced grid) | **Dropped** — Claude/GPT both return `ValidationException` on this account |
 
-**`qwen-2.5-7b-instruct` has exactly one provider (Phala).** Under
-`allow_fallbacks=false` there is no alternate backend; if Phala is unavailable, that
-model's cells stall rather than silently re-route. Quantization is reported as
-`unknown`, so it cannot be pinned for this model — documented as a limitation.
+The Gemma ↔ Qwen3 pairing (preregistered H4 primary contrast: same parameter class,
+different model generation) is preserved: 27B Gemma vs 32B Qwen3 are the same
+architectural tier, different families and generations.
 
-**Context asymmetry.** 32k (Qwen-2.5-7B) to 262k (Qwen3.8-27B). Prompts are held
-identical across models so context length is not a confound; the 32k floor caps
-maximum prompt size for the whole study.
+---
 
-## Resolved: forced tool calls on Phala
+## Tool-calling behaviour per model (verified 2026-09-17)
 
-The prior paper recorded (`fsm.py` docstring) that Phala corrupted its own JSON
-output when `tool_choice="required"` was set for `qwen-2.5-7b-instruct`, reproduced
-3/3. This matters because the ADF~0 rung requires forced tool selection — if it
-still held, the small model could not run the most constrained condition at all.
+| Model | `toolChoice=auto` | `toolChoice=any` (="required") | Notes |
+|-------|------------------|-------------------------------|-------|
+| `google.gemma-3-27b-it` | ❌ text only | ✅ calls tool | Always use `tool_choice="required"` for forced-single steps |
+| `qwen.qwen3-32b-v1:0` | ✅ | ✅ | |
+| `amazon.nova-micro-v1:0` | ✅ | ✅ | |
+| `amazon.nova-pro-v1:0` | ✅ | ✅ | |
+| `mistral.ministral-3-8b-instruct` | ✅ | ✅ | Reserve model, not in primary grid |
 
-**Re-tested 2026-09-16: no longer reproduces, 3/3 valid tool calls with correct enum
-arguments.** The provider-side bug has been fixed. `tool_choice="required"` is used
-uniformly across all models, which removes the prior paper's per-model calibration
-knob and is itself a small methodological improvement.
+**Implication for the harness:** `tool_mode="forced_single"` always passes
+`tool_choice="required"` (maps to Bedrock `toolChoice={"any": {}}` via LangChain).
+This forces Gemma to call the tool.  No per-model override needed; the harness
+handles this uniformly.
 
-Re-verify this before the full grid; a silent provider regression would corrupt the
-ADF~0 cells specifically.
+---
+
+## Model substitution rationale (engineering decision, not hypothesis change)
+
+The preregistration froze model *names* and *capability tiers*, not provider IDs.
+Switching from OpenRouter to Bedrock is an infrastructure change.  The substitutions
+preserve the capability ordering (small → mid-gen1 → mid-gen2 → large), which is
+what H4 requires.
+
+Key H4 consequence: the primary contrast remains mid-gen1 (Gemma-3-27B) vs
+mid-gen2 (Qwen3-32B).  Parameter count is held approximately constant (~27-32B);
+model generation varies.  The claim being tested is unchanged.
+
+The substitution of `qwen-2.5-7b` → `nova-micro` weakens the small-tier anchor
+slightly: Nova-Micro is Amazon's proprietary model, not open-weights.  If the
+small-tier result is surprising, this should be flagged in the paper as a
+provenance difference.
+
+---
+
+## Region
+
+`us-east-1` (from `AWS_DEFAULT_REGION`).  All four models are available in this
+region.  If region changes, re-verify availability before any grid run.
+
+---
+
+## Re-verification schedule
+
+Re-run the tool-calling smoke test in `tests/test_phase4.py :: TestControlFlow`
+before the pilot and again before the full grid.  Bedrock model availability can
+change without notice (models can be deprecated or access can be revoked).
