@@ -191,3 +191,91 @@ the most constrained condition, and the frozen roster would have needed a substi
 **Stop conditions:** None applicable (Phase 2 still in progress).
 **Diagnostics:** Not applicable (no data runs yet).
 **Budget:** $0.00 spent this session. Running total ~$0.0005.
+
+---
+
+## Budget decision — APPROVED by human 2026-09-17
+
+**Decision:** Full confirmatory grid reduced to **3 ADF rungs × 2 task families × 4 models × N=50 = 1,200 runs** to fit the $4.00 ceiling. N/cell is inviolate per preregistration.
+
+**Selected rungs for the full grid:** L0′ (0.000 bits/dp), L3 (1.921 bits/dp), L5 (3.567 bits/dp).
+Rationale: widest possible spread while staying within budget. All 8 rungs remain defined
+in `docs/adf_ladder.md` and available for the pilot.
+
+**Pilot** (§6.1): still uses 5 rungs (L0′, L1, L2, L3, L5), 1 model, 1 family, N=10 = 50 runs.
+Pilot is within budget regardless.
+
+**Human decision flag discharged.** No further budget decision needed before Phase 6.2.
+
+---
+
+## Session 4 — F2 branching task + Phase 4 validation suite
+
+**Date:** 2026-09-17 (continuation)
+**Spent:** $0.00 (zero API calls this session)
+**Commits:** 1ba6c28
+
+### Budget decision recorded
+Full grid: **3 rungs (L0′, L3, L5) × 2 families × 4 models × N=50 = 1,200 runs**.
+Human-approved 2026-09-17. N/cell inviolate.
+
+### Delivered this session
+
+1. **`src/tasks/branching_ecl.py`** — F2 branching task family.
+   - Linear path: LOAD_DATA → VALIDATE_DATA → CALCULATE → GENERATE_REPORT
+   - Branching path: adds ESCALATION (stress-test ECL at PD_stress=2×PD) when
+     any valid loan has PD > 0.15. Condition NOT stated in the task prompt.
+   - 5 tools (adds `escalation_tool`). TaskSpec: S=5, N=6, K=3, M=5.
+
+2. **`src/harness/gen_branching_instances.py`** — deterministic generator (seed=42).
+   30 instances (15 linear, 15 branching), 8 valid + 4 invalid rows each.
+   Ground truth: deterministic Python only, never LLM.
+
+3. **`data/branching/`** — 30 instances + GT JSON + manifest.json (committed).
+
+4. **`configurable.py` extended** — `TaskDefinition.linear_states` field; FSM loop
+   uses `linear_states` for `fsm_fixed` on branching tasks (the H2 mechanism).
+   `_make_f2_branching_task_def()` registered as `'branching_ecl'`.
+
+5. **`tests/test_phase4.py`** — 92 tests, **all PASS**.
+   - Gate 1: 64 HarnessConfig combos run without crash + 5 structural checks
+   - Gate 2: ADF monotonicity at all 3 proxies + per-layer tightening
+   - Gate 3: ADF hand-check (Examples A/B/C + L0'=0, codegen norm, H5 pair)
+   - Gate 4: Trace completeness for success + failure runs
+   - Gate 5: Ground-truth scorers for finance_ecl, legal_clause, 5 linear +
+             5 branching instances
+   - Gate 6: L0' FAILS all 10 branching instances (ESCALATION never visited);
+             L0' PASSES all linear instances
+   - Gate 7: Failure sets disjoint (only branching instances fail at L0')
+
+### Phase 4 verdict: ALL GATES PASS
+
+The Phase 4 guard is cleared. Real API spend may now begin.
+
+### What remains before the pilot (Phase 5 → 6.1)
+
+1. **F1 instance generation** (≥20 per family) — `data/finance/` has only 1
+   instance; `data/legal/` has only 1. Need to generate diverse instances with
+   known difficulty parameters and commit generators + RNG seeds.
+   Generator already exists structurally for branching; need similar for F1.
+
+2. **tau2-bench F0** (not yet integrated) — still required for the confirmatory
+   grid but NOT for the pilot (pilot can use F1 or F2). OK to defer to after pilot.
+
+3. **Pilot run** (§6.1): 1 model, 1 family (branching_ecl or finance_ecl),
+   5 rungs (L0′,L1,L2,L3,L5), N=10 = 50 runs. Uses real API.
+   - Purpose: verify pipeline end-to-end + variance estimate for power calc.
+   - Cheapest: `qwen/qwen-2.5-7b-instruct` on `branching_ecl` (most interesting
+     family for H2 test, and cheapest model).
+   - Spend estimate: ~50 runs × ~5k tokens avg × $0.10/1M = ~$0.025. Well within budget.
+
+4. **discards.jsonl** — needs to be created (currently absent). First API run
+   will likely trigger some 429/5xx; the logger must write to it.
+
+5. **Provider re-verification** — Phala/qwen-2.5-7b-instruct JSON correctness
+   under `tool_choice="required"` must be re-tested before the pilot (last cleared
+   2026-09-16; may have regressed).
+
+**Stop conditions:** None applicable yet (no data runs).
+**Budget running total:** ~$0.0005.
+**Next:** F1 instance generation → pilot run → full grid.
