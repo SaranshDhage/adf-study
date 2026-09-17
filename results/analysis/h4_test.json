@@ -5,7 +5,7 @@
       "amazon.nova-micro-v1:0": 3.75787022676112,
       "google.gemma-3-27b-it": 1.1590404763278392,
       "qwen.qwen3-32b-v1:0": 3.75787022676112,
-      "amazon.nova-pro-v1:0": 0.0
+      "amazon.nova-pro-v1:0": 3.75787022676112
     },
     "model_details": {
       "amazon.nova-micro-v1:0": {
@@ -52,12 +52,16 @@
       },
       "amazon.nova-pro-v1:0": {
         "peak_tsr": 1.0,
-        "ceiling_adf": 0.0,
+        "ceiling_adf": 3.75787022676112,
         "tsr_by_rung": {
           "L0prime": 1.0,
           "L0": 0.92,
           "L1": 0.92,
-          "L2": 0.8913
+          "L2": 0.9,
+          "L3": 1.0,
+          "L4": 1.0,
+          "L5": 1.0,
+          "L6": 1.0
         }
       }
     },

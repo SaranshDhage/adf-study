@@ -1,0 +1,112 @@
+
+Pilot: model=amazon.nova-micro-v1:0  family=branching_ecl  rungs=['L0prime', 'L0', 'L1', 'L2', 'L3', 'L4', 'L5', 'L6']  N=10
+Planned=80  Already done=80  Remaining=0
+
+  Rung L0prime:
+    [instance_000/r0] skip (already done)
+    [instance_001/r1] skip (already done)
+    [instance_002/r2] skip (already done)
+    [instance_003/r3] skip (already done)
+    [instance_004/r4] skip (already done)
+    [instance_005/r5] skip (already done)
+    [instance_006/r6] skip (already done)
+    [instance_007/r7] skip (already done)
+    [instance_008/r8] skip (already done)
+    [instance_009/r9] skip (already done)
+
+  Rung L0:
+    [instance_000/r0] skip (already done)
+    [instance_001/r1] skip (already done)
+    [instance_002/r2] skip (already done)
+    [instance_003/r3] skip (already done)
+    [instance_004/r4] skip (already done)
+    [instance_005/r5] skip (already done)
+    [instance_006/r6] skip (already done)
+    [instance_007/r7] skip (already done)
+    [instance_008/r8] skip (already done)
+    [instance_009/r9] skip (already done)
+
+  Rung L1:
+    [instance_000/r0] skip (already done)
+    [instance_001/r1] skip (already done)
+    [instance_002/r2] skip (already done)
+    [instance_003/r3] skip (already done)
+    [instance_004/r4] skip (already done)
+    [instance_005/r5] skip (already done)
+    [instance_006/r6] skip (already done)
+    [instance_007/r7] skip (already done)
+    [instance_008/r8] skip (already done)
+    [instance_009/r9] skip (already done)
+
+  Rung L2:
+    [instance_000/r0] skip (already done)
+    [instance_001/r1] skip (already done)
+    [instance_002/r2] skip (already done)
+    [instance_003/r3] skip (already done)
+    [instance_004/r4] skip (already done)
+    [instance_005/r5] skip (already done)
+    [instance_006/r6] skip (already done)
+    [instance_007/r7] skip (already done)
+    [instance_008/r8] skip (already done)
+    [instance_009/r9] skip (already done)
+
+  Rung L3:
+    [instance_000/r0] skip (already done)
+    [instance_001/r1] skip (already done)
+    [instance_002/r2] skip (already done)
+    [instance_003/r3] skip (already done)
+    [instance_004/r4] skip (already done)
+    [instance_005/r5] skip (already done)
+    [instance_006/r6] skip (already done)
+    [instance_007/r7] skip (already done)
+    [instance_008/r8] skip (already done)
+    [instance_009/r9] skip (already done)
+
+  Rung L4:
+    [instance_000/r0] skip (already done)
+    [instance_001/r1] skip (already done)
+    [instance_002/r2] skip (already done)
+    [instance_003/r3] skip (already done)
+    [instance_004/r4] skip (already done)
+    [instance_005/r5] skip (already done)
+    [instance_006/r6] skip (already done)
+    [instance_007/r7] skip (already done)
+    [instance_008/r8] skip (already done)
+    [instance_009/r9] skip (already done)
+
+  Rung L5:
+    [instance_000/r0] skip (already done)
+    [instance_001/r1] skip (already done)
+    [instance_002/r2] skip (already done)
+    [instance_003/r3] skip (already done)
+    [instance_004/r4] skip (already done)
+    [instance_005/r5] skip (already done)
+    [instance_006/r6] skip (already done)
+    [instance_007/r7] skip (already done)
+    [instance_008/r8] skip (already done)
+    [instance_009/r9] skip (already done)
+
+  Rung L6:
+    [instance_000/r0] skip (already done)
+    [instance_001/r1] skip (already done)
+    [instance_002/r2] skip (already done)
+    [instance_003/r3] skip (already done)
+    [instance_004/r4] skip (already done)
+    [instance_005/r5] skip (already done)
+    [instance_006/r6] skip (already done)
+    [instance_007/r7] skip (already done)
+    [instance_008/r8] skip (already done)
+    [instance_009/r9] skip (already done)
+
+Pilot complete: 0 new runs.  Results in /home/saransh/Projects/Agentic-Research/adf-study/results/pilot/runs.jsonl
+Summary written to /home/saransh/Projects/Agentic-Research/adf-study/results/pilot/summary.json
+
+Per-rung TSR:
+  L0       ADF=0.381  TSR=100.0% (10/10)  ████████████████████
+  L0prime  ADF=0.000  TSR=90.0% (9/10)  ██████████████████
+  L1       ADF=0.857  TSR=100.0% (10/10)  ████████████████████
+  L2       ADF=1.159  TSR=100.0% (10/10)  ████████████████████
+  L3       ADF=1.921  TSR=100.0% (10/10)  ████████████████████
+  L4       ADF=2.363  TSR=100.0% (10/10)  ████████████████████
+  L5       ADF=3.567  TSR=80.0% (8/10)  ████████████████
+  L6       ADF=3.758  TSR=100.0% (10/10)  ████████████████████

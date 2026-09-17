@@ -1,1 +1,28 @@
-{}
+{
+  "amazon.nova-micro-v1:0": {
+    "model": "amazon.nova-micro-v1:0",
+    "linear_opt_adf": 1.920945238232601,
+    "branching_opt_adf": 3.7990168273391283,
+    "h3_direction_correct": true,
+    "linear_tsr": [
+      0.9636,
+      0.96,
+      0.96,
+      0.96,
+      1.0,
+      1.0,
+      0.92,
+      1.0
+    ],
+    "branching_tsr": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.48,
+      0.44,
+      0.32,
+      0.54
+    ]
+  }
+}

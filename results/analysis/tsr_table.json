@@ -1,4 +1,94 @@
 {
+  "branching_ecl|amazon.nova-micro-v1:0|L0": {
+    "family": "branching_ecl",
+    "model": "amazon.nova-micro-v1:0",
+    "rung": "L0",
+    "n": 50,
+    "tsr": 0.5,
+    "ci_lo": 0.36,
+    "ci_hi": 0.64,
+    "adf_rate": 0.38461538461538464
+  },
+  "branching_ecl|amazon.nova-micro-v1:0|L0prime": {
+    "family": "branching_ecl",
+    "model": "amazon.nova-micro-v1:0",
+    "rung": "L0prime",
+    "n": 50,
+    "tsr": 0.5,
+    "ci_lo": 0.36,
+    "ci_hi": 0.64,
+    "adf_rate": 0.0
+  },
+  "branching_ecl|amazon.nova-micro-v1:0|L1": {
+    "family": "branching_ecl",
+    "model": "amazon.nova-micro-v1:0",
+    "rung": "L1",
+    "n": 50,
+    "tsr": 0.5,
+    "ci_lo": 0.36,
+    "ci_hi": 0.64,
+    "adf_rate": 0.7692307692307693
+  },
+  "branching_ecl|amazon.nova-micro-v1:0|L2": {
+    "family": "branching_ecl",
+    "model": "amazon.nova-micro-v1:0",
+    "rung": "L2",
+    "n": 50,
+    "tsr": 0.5,
+    "ci_lo": 0.36,
+    "ci_hi": 0.64,
+    "adf_rate": 1.0740312501386837
+  },
+  "branching_ecl|amazon.nova-micro-v1:0|L3": {
+    "family": "branching_ecl",
+    "model": "amazon.nova-micro-v1:0",
+    "rung": "L3",
+    "n": 50,
+    "tsr": 0.48,
+    "ci_lo": 0.34,
+    "ci_hi": 0.62,
+    "adf_rate": 1.843262019369453
+  },
+  "branching_ecl|amazon.nova-micro-v1:0|L4": {
+    "family": "branching_ecl",
+    "model": "amazon.nova-micro-v1:0",
+    "rung": "L4",
+    "n": 50,
+    "tsr": 0.44,
+    "ci_lo": 0.3,
+    "ci_hi": 0.58,
+    "adf_rate": 2.34037019258506
+  },
+  "branching_ecl|amazon.nova-micro-v1:0|L5": {
+    "family": "branching_ecl",
+    "model": "amazon.nova-micro-v1:0",
+    "rung": "L5",
+    "n": 50,
+    "tsr": 0.32,
+    "ci_lo": 0.2,
+    "ci_hi": 0.46,
+    "adf_rate": 3.606709135031436
+  },
+  "branching_ecl|amazon.nova-micro-v1:0|L5_codegen": {
+    "family": "branching_ecl",
+    "model": "amazon.nova-micro-v1:0",
+    "rung": "L5_codegen",
+    "n": 50,
+    "tsr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "adf_rate": 3.606709135031436
+  },
+  "branching_ecl|amazon.nova-micro-v1:0|L6": {
+    "family": "branching_ecl",
+    "model": "amazon.nova-micro-v1:0",
+    "rung": "L6",
+    "n": 50,
+    "tsr": 0.54,
+    "ci_lo": 0.4,
+    "ci_hi": 0.68,
+    "adf_rate": 3.7990168273391283
+  },
   "finance_ecl|amazon.nova-micro-v1:0|L0": {
     "family": "finance_ecl",
     "model": "amazon.nova-micro-v1:0",
@@ -123,11 +213,61 @@
     "family": "finance_ecl",
     "model": "amazon.nova-pro-v1:0",
     "rung": "L2",
-    "n": 46,
-    "tsr": 0.8913,
-    "ci_lo": 0.8043,
-    "ci_hi": 0.9783,
+    "n": 50,
+    "tsr": 0.9,
+    "ci_lo": 0.8,
+    "ci_hi": 0.98,
     "adf_rate": 1.1590404763278392
+  },
+  "finance_ecl|amazon.nova-pro-v1:0|L3": {
+    "family": "finance_ecl",
+    "model": "amazon.nova-pro-v1:0",
+    "rung": "L3",
+    "n": 50,
+    "tsr": 1.0,
+    "ci_lo": 1.0,
+    "ci_hi": 1.0,
+    "adf_rate": 1.920945238232601
+  },
+  "finance_ecl|amazon.nova-pro-v1:0|L4": {
+    "family": "finance_ecl",
+    "model": "amazon.nova-pro-v1:0",
+    "rung": "L4",
+    "n": 50,
+    "tsr": 1.0,
+    "ci_lo": 1.0,
+    "ci_hi": 1.0,
+    "adf_rate": 2.3632172563063842
+  },
+  "finance_ecl|amazon.nova-pro-v1:0|L5": {
+    "family": "finance_ecl",
+    "model": "amazon.nova-pro-v1:0",
+    "rung": "L5",
+    "n": 50,
+    "tsr": 1.0,
+    "ci_lo": 1.0,
+    "ci_hi": 1.0,
+    "adf_rate": 3.56739403628493
+  },
+  "finance_ecl|amazon.nova-pro-v1:0|L5_codegen": {
+    "family": "finance_ecl",
+    "model": "amazon.nova-pro-v1:0",
+    "rung": "L5_codegen",
+    "n": 50,
+    "tsr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "adf_rate": 3.56739403628493
+  },
+  "finance_ecl|amazon.nova-pro-v1:0|L6": {
+    "family": "finance_ecl",
+    "model": "amazon.nova-pro-v1:0",
+    "rung": "L6",
+    "n": 50,
+    "tsr": 1.0,
+    "ci_lo": 1.0,
+    "ci_hi": 1.0,
+    "adf_rate": 3.75787022676112
   },
   "finance_ecl|google.gemma-3-27b-it|L0": {
     "family": "finance_ecl",

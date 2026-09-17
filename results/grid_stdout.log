@@ -1576,3 +1576,784 @@ Already done:  0 runs
     [instance_015/r41] ✅  tok=7817  6790ms  err=
     [instance_016/r42] ✅  tok=7317  6761ms  err=
     [instance_017/r43] ✅  tok=8869  7227ms  err=
+    [instance_018/r44] ❌  tok=1470  18919ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_019/r45] ✅  tok=9247  7269ms  err=
+    [instance_020/r46] ✅  tok=7517  6614ms  err=
+    [instance_021/r47] ✅  tok=7135  6580ms  err=
+    [instance_022/r48] ✅  tok=7694  6968ms  err=
+    [instance_023/r49] ✅  tok=7403  6669ms  err=
+    → TSR=92% (46/50)  ADF=0.381  avg_tok=7521
+
+  [L1]
+    [instance_000/r0] ✅  tok=7103  6476ms  err=
+    [instance_001/r1] ✅  tok=8604  6316ms  err=
+    [instance_002/r2] ✅  tok=7595  6473ms  err=
+    [instance_003/r3] ✅  tok=9098  6228ms  err=
+    [instance_004/r4] ✅  tok=6731  6342ms  err=
+    [instance_005/r5] ✅  tok=8184  6393ms  err=
+    [instance_006/r6] ✅  tok=7317  6138ms  err=
+    [instance_007/r7] ✅  tok=8204  6590ms  err=
+    [instance_008/r8] ✅  tok=8034  6577ms  err=
+    [instance_009/r9] ✅  tok=8690  7436ms  err=
+    [instance_010/r10] ✅  tok=9087  6574ms  err=
+    [instance_011/r11] ✅  tok=6738  6204ms  err=
+    [instance_012/r12] ✅  tok=8517  6482ms  err=
+    [instance_013/r13] ❌  tok=1308  17706ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_014/r14] ✅  tok=8043  6791ms  err=
+    [instance_015/r15] ✅  tok=7655  6644ms  err=
+    [instance_016/r16] ✅  tok=7155  6222ms  err=
+    [instance_017/r17] ✅  tok=8707  6617ms  err=
+    [instance_018/r18] ❌  tok=1308  17449ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_019/r19] ✅  tok=9085  6582ms  err=
+    [instance_020/r20] ✅  tok=7355  6240ms  err=
+    [instance_021/r21] ✅  tok=7041  7141ms  err=
+    [instance_022/r22] ✅  tok=7532  6339ms  err=
+    [instance_023/r23] ✅  tok=7241  6378ms  err=
+    [instance_024/r24] ✅  tok=8421  6408ms  err=
+    [instance_025/r25] ✅  tok=6727  6502ms  err=
+    [instance_000/r26] ✅  tok=7103  11183ms  err=
+    [instance_001/r27] ✅  tok=8604  6392ms  err=
+    [instance_002/r28] ✅  tok=7595  6132ms  err=
+    [instance_003/r29] ✅  tok=9098  6862ms  err=
+    [instance_004/r30] ✅  tok=6731  6405ms  err=
+    [instance_005/r31] ✅  tok=8184  6557ms  err=
+    [instance_006/r32] ✅  tok=7317  6217ms  err=
+    [instance_007/r33] ✅  tok=8204  6426ms  err=
+    [instance_008/r34] ✅  tok=8034  6378ms  err=
+    [instance_009/r35] ✅  tok=8690  6424ms  err=
+    [instance_010/r36] ✅  tok=9087  6908ms  err=
+    [instance_011/r37] ✅  tok=6738  6325ms  err=
+    [instance_012/r38] ✅  tok=8517  6547ms  err=
+    [instance_013/r39] ❌  tok=1308  17986ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_014/r40] ✅  tok=8043  6228ms  err=
+    [instance_015/r41] ✅  tok=7655  6442ms  err=
+    [instance_016/r42] ✅  tok=7155  6460ms  err=
+    [instance_017/r43] ✅  tok=8707  6340ms  err=
+    [instance_018/r44] ❌  tok=1309  18056ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_019/r45] ✅  tok=9085  6277ms  err=
+    [instance_020/r46] ✅  tok=7355  6658ms  err=
+    [instance_021/r47] ✅  tok=6973  5806ms  err=
+    [instance_022/r48] ✅  tok=7532  9884ms  err=
+    [instance_023/r49] ✅  tok=7241  7442ms  err=
+    → TSR=92% (46/50)  ADF=0.857  avg_tok=7355
+
+  [L2]
+    [instance_000/r0] ✅  tok=11459  11499ms  err=
+    [instance_001/r1] ✅  tok=14461  11289ms  err=
+    [instance_002/r2] ✅  tok=12446  11271ms  err=
+    [instance_003/r3] ✅  tok=15449  10892ms  err=
+    [instance_004/r4] ✅  tok=10715  11572ms  err=
+    [instance_005/r5] ✅  tok=13624  11070ms  err=
+    [instance_006/r6] ✅  tok=11887  11268ms  err=
+    [instance_007/r7] ✅  tok=13667  11426ms  err=
+    [instance_008/r8] ✅  tok=13321  11685ms  err=
+    [instance_009/r9] ✅  tok=14633  11502ms  err=
+    [instance_010/r10] ✅  tok=15427  10875ms  err=
+    [instance_011/r11] ✅  tok=10732  12285ms  err=
+    [instance_012/r12] ✅  tok=14287  11340ms  err=
+    [instance_013/r13] ❌  tok=2701  20358ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_014/r14] ✅  tok=13339  11368ms  err=
+    [instance_015/r15] ✅  tok=12563  11026ms  err=
+    [instance_016/r16] ✅  tok=11563  11119ms  err=
+    [instance_017/r17] ✅  tok=14667  11010ms  err=
+    [instance_018/r18] ❌  tok=3061  21215ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_019/r19] ✅  tok=15423  12186ms  err=
+    [instance_020/r20] ✅  tok=11963  16275ms  err=
+    [instance_021/r21] ✅  tok=11199  11069ms  err=
+    [instance_022/r22] ✅  tok=12317  11563ms  err=
+    [instance_023/r23] ✅  tok=11738  11203ms  err=
+    [instance_024/r24] ✅  tok=14095  11732ms  err=
+    [instance_025/r25] ❌  tok=5329  24222ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_000/r26] ✅  tok=11459  10660ms  err=
+    [instance_001/r27] ✅  tok=14461  11899ms  err=
+    [instance_002/r28] ✅  tok=12443  11056ms  err=
+    [instance_003/r29] ✅  tok=15449  11850ms  err=
+    [instance_004/r30] ❌  tok=5334  22184ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_005/r31] ❌  tok=2860  20327ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_006/r32] ✅  tok=11887  11701ms  err=
+    [instance_007/r33] ✅  tok=13661  11466ms  err=
+    [instance_008/r34] ✅  tok=13324  11862ms  err=
+    [instance_009/r35] ✅  tok=14633  12232ms  err=
+    [instance_010/r36] ✅  tok=15427  11047ms  err=
+    [instance_011/r37] ✅  tok=10789  11733ms  err=
+    [instance_012/r38] ✅  tok=14287  10786ms  err=
+    [instance_013/r39] ✅  tok=11844  10939ms  err=
+    [instance_014/r40] ✅  tok=13339  11873ms  err=
+    [instance_015/r41] ✅  tok=12563  11261ms  err=
+    [instance_016/r42] ✅  tok=11563  11067ms  err=
+    [instance_017/r43] ✅  tok=14668  11035ms  err=
+    [instance_018/r44] ✅  tok=15473  11288ms  err=
+    [instance_019/r45] ✅  tok=15426  11577ms  err=
+    [instance_020/r46] ✅  tok=11966  11338ms  err=
+    [instance_021/r47] ✅  tok=11268  12499ms  err=
+    [instance_022/r48] ✅  tok=12320  11068ms  err=
+    [instance_023/r49] ✅  tok=11739  11777ms  err=
+    → TSR=90% (45/50)  ADF=1.159  avg_tok=12205
+
+  [L3]
+    [instance_000/r0] ✅  tok=11973  13782ms  err=
+    [instance_001/r1] ✅  tok=14957  13619ms  err=
+    [instance_002/r2] ✅  tok=12927  13498ms  err=
+    [instance_003/r3] ✅  tok=15933  14946ms  err=
+    [instance_004/r4] ✅  tok=11186  13438ms  err=
+    [instance_005/r5] ✅  tok=14119  13871ms  err=
+    [instance_006/r6] ✅  tok=12392  14323ms  err=
+    [instance_007/r7] ✅  tok=14129  13680ms  err=
+    [instance_008/r8] ✅  tok=13820  13658ms  err=
+    [instance_009/r9] ✅  tok=15117  14003ms  err=
+    [instance_010/r10] ✅  tok=15884  13335ms  err=
+    [instance_011/r11] ✅  tok=11243  13903ms  err=
+    [instance_012/r12] ✅  tok=14734  13640ms  err=
+    [instance_013/r13] ✅  tok=12294  13073ms  err=
+    [instance_014/r14] ✅  tok=13824  49997ms  err=
+    [instance_015/r15] ✅  tok=13021  13011ms  err=
+    [instance_016/r16] ✅  tok=12073  14130ms  err=
+    [instance_017/r17] ✅  tok=15148  13912ms  err=
+    [instance_018/r18] ✅  tok=15965  14247ms  err=
+    [instance_019/r19] ✅  tok=15956  13899ms  err=
+    [instance_020/r20] ✅  tok=12471  19115ms  err=
+    [instance_021/r21] ✅  tok=11699  13602ms  err=
+    [instance_022/r22] ✅  tok=12824  14083ms  err=
+    [instance_023/r23] ✅  tok=12196  14558ms  err=
+    [instance_024/r24] ✅  tok=14594  14086ms  err=
+    [instance_025/r25] ✅  tok=11200  13348ms  err=
+    [instance_000/r26] ✅  tok=11948  13348ms  err=
+    [instance_001/r27] ✅  tok=14910  13125ms  err=
+    [instance_002/r28] ✅  tok=12950  15164ms  err=
+    [instance_003/r29] ✅  tok=15932  14235ms  err=
+    [instance_004/r30] ✅  tok=11222  13785ms  err=
+    [instance_005/r31] ✅  tok=14118  13682ms  err=
+    [instance_006/r32] ✅  tok=12380  13124ms  err=
+    [instance_007/r33] ✅  tok=14154  13469ms  err=
+    [instance_008/r34] ✅  tok=13814  14171ms  err=
+    [instance_009/r35] ✅  tok=15132  19042ms  err=
+    [instance_010/r36] ✅  tok=15918  13628ms  err=
+    [instance_011/r37] ✅  tok=11230  13583ms  err=
+    [instance_012/r38] ✅  tok=14751  13448ms  err=
+    [instance_013/r39] ✅  tok=12301  13735ms  err=
+    [instance_014/r40] ✅  tok=13794  14246ms  err=
+    [instance_015/r41] ✅  tok=13050  13479ms  err=
+    [instance_016/r42] ✅  tok=12023  13225ms  err=
+    [instance_017/r43] ✅  tok=15104  12627ms  err=
+    [instance_018/r44] ✅  tok=15929  13051ms  err=
+    [instance_019/r45] ✅  tok=15894  12624ms  err=
+    [instance_020/r46] ✅  tok=12457  13059ms  err=
+    [instance_021/r47] ✅  tok=11706  13137ms  err=
+    [instance_022/r48] ✅  tok=12799  13620ms  err=
+    [instance_023/r49] ✅  tok=12237  14335ms  err=
+    → TSR=100% (50/50)  ADF=1.921  avg_tok=13549
+
+  [L4]
+    [instance_000/r0] ✅  tok=17895  19024ms  err=
+    [instance_001/r1] ✅  tok=23225  19401ms  err=
+    [instance_002/r2] ✅  tok=19593  18823ms  err=
+    [instance_003/r3] ✅  tok=24912  21555ms  err=
+    [instance_004/r4] ✅  tok=16534  21338ms  err=
+    [instance_005/r5] ✅  tok=21745  18533ms  err=
+    [instance_006/r6] ✅  tok=18654  19011ms  err=
+    [instance_007/r7] ✅  tok=21821  19046ms  err=
+    [instance_008/r8] ✅  tok=21198  19418ms  err=
+    [instance_009/r9] ✅  tok=23522  18707ms  err=
+    [instance_010/r10] ✅  tok=24894  18805ms  err=
+    [instance_011/r11] ✅  tok=16594  18830ms  err=
+    [instance_012/r12] ✅  tok=22897  18670ms  err=
+    [instance_013/r13] ✅  tok=18555  17354ms  err=
+    [instance_014/r14] ✅  tok=21220  17920ms  err=
+    [instance_015/r15] ✅  tok=19833  29319ms  err=
+    [instance_016/r16] ✅  tok=18068  18595ms  err=
+    [instance_017/r17] ✅  tok=23603  19051ms  err=
+    [instance_018/r18] ✅  tok=25018  18066ms  err=
+    [instance_019/r19] ✅  tok=24934  18145ms  err=
+    [instance_020/r20] ✅  tok=18778  18273ms  err=
+    [instance_021/r21] ✅  tok=17409  18487ms  err=
+    [instance_022/r22] ✅  tok=19404  18510ms  err=
+    [instance_023/r23] ✅  tok=18394  18954ms  err=
+    [instance_024/r24] ✅  tok=22593  18882ms  err=
+    [instance_025/r25] ✅  tok=16525  18256ms  err=
+    [instance_000/r26] ✅  tok=17886  18729ms  err=
+    [instance_001/r27] ✅  tok=23230  19484ms  err=
+    [instance_002/r28] ✅  tok=19616  18747ms  err=
+    [instance_003/r29] ✅  tok=24937  17660ms  err=
+    [instance_004/r30] ✅  tok=16561  19550ms  err=
+    [instance_005/r31] ✅  tok=21740  18406ms  err=
+    [instance_006/r32] ✅  tok=18638  18839ms  err=
+    [instance_007/r33] ✅  tok=21799  18329ms  err=
+    [instance_008/r34] ✅  tok=21198  18908ms  err=
+    [instance_009/r35] ✅  tok=23540  18877ms  err=
+    [instance_010/r36] ✅  tok=24945  18024ms  err=
+    [instance_011/r37] ✅  tok=16572  19101ms  err=
+    [instance_012/r38] ✅  tok=22913  18755ms  err=
+    [instance_013/r39] ✅  tok=18541  18663ms  err=
+    [instance_014/r40] ✅  tok=21188  18635ms  err=
+    [instance_015/r41] ✅  tok=19809  18367ms  err=
+    [instance_016/r42] ✅  tok=18067  19325ms  err=
+    [instance_017/r43] ✅  tok=23616  18932ms  err=
+    [instance_018/r44] ✅  tok=25011  18713ms  err=
+    [instance_019/r45] ✅  tok=24965  19365ms  err=
+    [instance_020/r46] ✅  tok=18729  17578ms  err=
+    [instance_021/r47] ✅  tok=17416  19399ms  err=
+    [instance_022/r48] ✅  tok=19412  18722ms  err=
+    [instance_023/r49] ✅  tok=18355  55393ms  err=
+    → TSR=100% (50/50)  ADF=2.363  avg_tok=20730
+
+  [L5]
+    [instance_000/r0] ✅  tok=18573  18842ms  err=
+    [instance_001/r1] ✅  tok=23883  18862ms  err=
+    [instance_002/r2] ✅  tok=20333  18958ms  err=
+    [instance_003/r3] ✅  tok=25637  18107ms  err=
+    [instance_004/r4] ✅  tok=17223  18331ms  err=
+    [instance_005/r5] ✅  tok=22417  19257ms  err=
+    [instance_006/r6] ✅  tok=19343  19055ms  err=
+    [instance_007/r7] ✅  tok=22456  18392ms  err=
+    [instance_008/r8] ✅  tok=21883  18276ms  err=
+    [instance_009/r9] ✅  tok=24244  19220ms  err=
+    [instance_010/r10] ✅  tok=25615  19105ms  err=
+    [instance_011/r11] ✅  tok=17264  17782ms  err=
+    [instance_012/r12] ✅  tok=23629  19568ms  err=
+    [instance_013/r13] ✅  tok=19289  19478ms  err=
+    [instance_014/r14] ✅  tok=21871  18211ms  err=
+    [instance_015/r15] ✅  tok=20555  18904ms  err=
+    [instance_016/r16] ✅  tok=18773  18368ms  err=
+    [instance_017/r17] ✅  tok=24268  18416ms  err=
+    [instance_018/r18] ✅  tok=25683  18273ms  err=
+    [instance_019/r19] ✅  tok=25612  18710ms  err=
+    [instance_020/r20] ✅  tok=19489  18917ms  err=
+    [instance_021/r21] ✅  tok=18074  17802ms  err=
+    [instance_022/r22] ✅  tok=20090  18935ms  err=
+    [instance_023/r23] ✅  tok=19068  18574ms  err=
+    [instance_024/r24] ✅  tok=23256  19078ms  err=
+    [instance_025/r25] ✅  tok=17250  17838ms  err=
+    [instance_000/r26] ✅  tok=18545  18422ms  err=
+    [instance_001/r27] ✅  tok=23883  18215ms  err=
+    [instance_002/r28] ✅  tok=20330  18308ms  err=
+    [instance_003/r29] ✅  tok=25651  18386ms  err=
+    [instance_004/r30] ✅  tok=17229  17425ms  err=
+    [instance_005/r31] ✅  tok=22394  17014ms  err=
+    [instance_006/r32] ✅  tok=19311  18599ms  err=
+    [instance_007/r33] ✅  tok=22495  18358ms  err=
+    [instance_008/r34] ✅  tok=21859  18608ms  err=
+    [instance_009/r35] ✅  tok=24206  18126ms  err=
+    [instance_010/r36] ✅  tok=25609  18435ms  err=
+    [instance_011/r37] ✅  tok=17300  18964ms  err=
+    [instance_012/r38] ✅  tok=23586  18700ms  err=
+    [instance_013/r39] ✅  tok=19256  18787ms  err=
+    [instance_014/r40] ✅  tok=21900  18314ms  err=
+    [instance_015/r41] ✅  tok=20506  18428ms  err=
+    [instance_016/r42] ✅  tok=18750  18004ms  err=
+    [instance_017/r43] ✅  tok=24265  17909ms  err=
+    [instance_018/r44] ✅  tok=25692  18244ms  err=
+    [instance_019/r45] ✅  tok=25595  19921ms  err=
+    [instance_020/r46] ✅  tok=19471  18099ms  err=
+    [instance_021/r47] ✅  tok=18111  18597ms  err=
+    [instance_022/r48] ✅  tok=20095  17994ms  err=
+    [instance_023/r49] ✅  tok=19116  18785ms  err=
+    → TSR=100% (50/50)  ADF=3.567  avg_tok=21419
+
+  [L6]
+    [instance_000/r0] ✅  tok=18687  20020ms  err=
+    [instance_001/r1] ✅  tok=23993  19588ms  err=
+    [instance_002/r2] ✅  tok=20455  18001ms  err=
+    [instance_003/r3] ✅  tok=25733  18178ms  err=
+    [instance_004/r4] ✅  tok=17373  18266ms  err=
+    [instance_005/r5] ✅  tok=22538  18749ms  err=
+    [instance_006/r6] ✅  tok=19443  19114ms  err=
+    [instance_007/r7] ✅  tok=22621  20028ms  err=
+    [instance_008/r8] ✅  tok=22015  20435ms  err=
+    [instance_009/r9] ✅  tok=24325  18629ms  err=
+    [instance_010/r10] ✅  tok=25720  18458ms  err=
+    [instance_011/r11] ✅  tok=17366  18464ms  err=
+    [instance_012/r12] ✅  tok=23730  19351ms  err=
+    [instance_013/r13] ✅  tok=19358  17596ms  err=
+    [instance_014/r14] ✅  tok=22008  17306ms  err=
+    [instance_015/r15] ✅  tok=20633  17974ms  err=
+    [instance_016/r16] ✅  tok=18835  18265ms  err=
+    [instance_017/r17] ✅  tok=24389  17620ms  err=
+    [instance_018/r18] ✅  tok=25795  18330ms  err=
+    [instance_019/r19] ✅  tok=25731  18047ms  err=
+    [instance_020/r20] ✅  tok=19577  19213ms  err=
+    [instance_021/r21] ✅  tok=18229  18032ms  err=
+    [instance_022/r22] ✅  tok=20210  18895ms  err=
+    [instance_023/r23] ✅  tok=19198  18405ms  err=
+    [instance_024/r24] ✅  tok=23376  17516ms  err=
+    [instance_025/r25] ✅  tok=17378  19238ms  err=
+    [instance_000/r26] ✅  tok=18697  20553ms  err=
+    [instance_001/r27] ✅  tok=23969  20654ms  err=
+    [instance_002/r28] ✅  tok=20458  19193ms  err=
+    [instance_003/r29] ✅  tok=25782  20489ms  err=
+    [instance_004/r30] ✅  tok=17324  24514ms  err=
+    [instance_005/r31] ✅  tok=22564  19597ms  err=
+    [instance_006/r32] ✅  tok=19456  19704ms  err=
+    [instance_007/r33] ✅  tok=22597  20305ms  err=
+    [instance_008/r34] ✅  tok=21965  20906ms  err=
+    [instance_009/r35] ✅  tok=24329  19320ms  err=
+    [instance_010/r36] ✅  tok=25693  18417ms  err=
+    [instance_011/r37] ✅  tok=17394  21653ms  err=
+    [instance_012/r38] ✅  tok=23711  19098ms  err=
+    [instance_013/r39] ✅  tok=19376  19512ms  err=
+    [instance_014/r40] ✅  tok=22031  19884ms  err=
+    [instance_015/r41] ✅  tok=20671  19899ms  err=
+    [instance_016/r42] ✅  tok=18870  18241ms  err=
+    [instance_017/r43] ✅  tok=24374  18112ms  err=
+    [instance_018/r44] ✅  tok=25837  18067ms  err=
+    [instance_019/r45] ✅  tok=25707  17932ms  err=
+    [instance_020/r46] ✅  tok=19552  18314ms  err=
+    [instance_021/r47] ✅  tok=18210  18846ms  err=
+    [instance_022/r48] ✅  tok=20210  17912ms  err=
+    [instance_023/r49] ✅  tok=19180  17920ms  err=
+    → TSR=100% (50/50)  ADF=3.758  avg_tok=21533
+
+  [L5_codegen  H5-pair]
+    [instance_000/r0] ❌  tok=3427  8584ms
+    [instance_001/r1] ❌  tok=5199  14285ms
+    [instance_002/r2] ❌  tok=3683  10910ms
+    [instance_003/r3] ❌  tok=3328  9391ms
+    [instance_004/r4] ❌  tok=3626  10692ms
+    [instance_005/r5] ❌  tok=4158  15815ms
+    [instance_006/r6] ❌  tok=2914  7222ms
+    [instance_007/r7] ❌  tok=8421  20246ms
+    [instance_008/r8] ❌  tok=2851  7699ms
+    [instance_009/r9] ❌  tok=3776  10755ms
+    [instance_010/r10] ❌  tok=6884  15976ms
+    [instance_011/r11] ❌  tok=3377  8499ms
+    [instance_012/r12] ❌  tok=3521  9967ms
+    [instance_013/r13] ❌  tok=8802  20429ms
+    [instance_014/r14] ❌  tok=3580  9320ms
+    [instance_015/r15] ❌  tok=4556  15564ms
+    [instance_016/r16] ❌  tok=3309  10088ms
+    [instance_017/r17] ❌  tok=3552  9450ms
+    [instance_018/r18] ❌  tok=4013  13159ms
+    [instance_019/r19] ❌  tok=3608  9002ms
+    [instance_020/r20] ❌  tok=3488  9365ms
+    [instance_021/r21] ❌  tok=4222  10758ms
+    [instance_022/r22] ❌  tok=4695  13668ms
+    [instance_023/r23] ❌  tok=3365  7819ms
+    [instance_024/r24] ❌  tok=4328  10898ms
+    [instance_025/r25] ❌  tok=4361  12381ms
+    [instance_000/r26] ❌  tok=3866  10138ms
+    [instance_001/r27] ❌  tok=3454  9787ms
+    [instance_002/r28] ❌  tok=3203  9667ms
+    [instance_003/r29] ❌  tok=3562  9828ms
+    [instance_004/r30] ❌  tok=3120  8619ms
+    [instance_005/r31] ❌  tok=4177  11501ms
+    [instance_006/r32] ❌  tok=5636  15510ms
+    [instance_007/r33] ❌  tok=6325  16339ms
+    [instance_008/r34] ❌  tok=3729  10594ms
+    [instance_009/r35] ❌  tok=4150  11641ms
+    [instance_010/r36] ❌  tok=3339  8291ms
+    [instance_011/r37] ❌  tok=3138  7708ms
+    [instance_012/r38] ❌  tok=4264  14950ms
+    [instance_013/r39] ❌  tok=3607  12643ms
+    [instance_014/r40] ❌  tok=4691  20839ms
+    [instance_015/r41] ❌  tok=3724  13109ms
+    [instance_016/r42] ❌  tok=3331  10455ms
+    [instance_017/r43] ❌  tok=3686  12262ms
+    [instance_018/r44] ❌  tok=4158  15368ms
+    [instance_019/r45] ❌  tok=6498  23553ms
+    [instance_020/r46] ❌  tok=4315  15412ms
+    [instance_021/r47] ❌  tok=3880  13645ms
+    [instance_022/r48] ❌  tok=3062  8503ms
+    [instance_023/r49] ❌  tok=4404  15721ms
+    → TSR=0% (0/50)  H5-codegen
+
+  DIAGNOSTICS (finance_ecl / amazon.nova-pro-v1:0):
+  ⚠ SATURATED-HIGH: L0prime TSR=100% — no discriminating power
+  ⚠ SATURATED-HIGH: L3 TSR=100% — no discriminating power
+  ⚠ SATURATED-HIGH: L4 TSR=100% — no discriminating power
+  ⚠ SATURATED-HIGH: L5 TSR=100% — no discriminating power
+  ⚠ SATURATED-HIGH: L6 TSR=100% — no discriminating power
+  ⚠ SATURATED-LOW: L5_codegen TSR=0% — no discriminating power
+
+  Grid progress:
+  Family          Model                          Rung     ADF    TSR    N
+  finance_ecl     nova-micro                     L0       0.381  96% 50
+  finance_ecl     nova-micro                     L0prime  0.000  96% 55
+  finance_ecl     nova-micro                     L1       0.857  96% 50
+  finance_ecl     nova-micro                     L2       1.159  96% 50
+  finance_ecl     nova-micro                     L3       1.921  100% 50
+  finance_ecl     nova-micro                     L4       2.363  100% 50
+  finance_ecl     nova-micro                     L5       3.567  92% 50
+  finance_ecl     nova-micro                     L5_codegen 3.567  0% 50
+  finance_ecl     nova-micro                     L6       3.758  100% 50
+  finance_ecl     nova-pro                       L0       0.381  92% 50
+  finance_ecl     nova-pro                       L0prime  0.000  100% 50
+  finance_ecl     nova-pro                       L1       0.857  92% 50
+  finance_ecl     nova-pro                       L2       1.159  90% 50
+  finance_ecl     nova-pro                       L3       1.921  100% 50
+  finance_ecl     nova-pro                       L4       2.363  100% 50
+  finance_ecl     nova-pro                       L5       3.567  100% 50
+  finance_ecl     nova-pro                       L5_codegen 3.567  0% 50
+  finance_ecl     nova-pro                       L6       3.758  100% 50
+  finance_ecl     gemma-3-27b-it                 L0       0.381  100% 50
+  finance_ecl     gemma-3-27b-it                 L0prime  0.000  96% 50
+  finance_ecl     gemma-3-27b-it                 L1       0.857  100% 50
+  finance_ecl     gemma-3-27b-it                 L2       1.159  100% 50
+  finance_ecl     gemma-3-27b-it                 L3       1.921  0% 50
+  finance_ecl     gemma-3-27b-it                 L4       2.363  0% 50
+  finance_ecl     gemma-3-27b-it                 L5       3.567  0% 50
+  finance_ecl     gemma-3-27b-it                 L5_codegen 3.567  0% 50
+  finance_ecl     gemma-3-27b-it                 L6       3.758  0% 50
+  finance_ecl     qwen3-32b                      L0       0.381  100% 50
+  finance_ecl     qwen3-32b                      L0prime  0.000  100% 50
+  finance_ecl     qwen3-32b                      L1       0.857  100% 50
+  finance_ecl     qwen3-32b                      L2       1.159  100% 50
+  finance_ecl     qwen3-32b                      L3       1.921  100% 50
+  finance_ecl     qwen3-32b                      L4       2.363  100% 50
+  finance_ecl     qwen3-32b                      L5       3.567  100% 50
+  finance_ecl     qwen3-32b                      L5_codegen 3.567  0% 50
+  finance_ecl     qwen3-32b                      L6       3.758  100% 50
+
+============================================================
+  branching_ecl × amazon.nova-micro-v1:0
+============================================================
+
+  [L0prime]
+    [instance_000/r0] ❌  tok=7306  6267ms  err=
+    [instance_001/r1] ✅  tok=7278  6035ms  err=
+    [instance_002/r2] ✅  tok=7269  6244ms  err=
+    [instance_003/r3] ❌  tok=7307  5659ms  err=
+    [instance_004/r4] ❌  tok=7302  5992ms  err=
+    [instance_005/r5] ✅  tok=7296  6143ms  err=
+    [instance_006/r6] ✅  tok=7289  11104ms  err=
+    [instance_007/r7] ✅  tok=7277  42489ms  err=
+    [instance_008/r8] ✅  tok=7303  5792ms  err=
+    [instance_009/r9] ❌  tok=7303  6195ms  err=
+    [instance_010/r10] ✅  tok=7294  6502ms  err=
+    [instance_011/r11] ❌  tok=7307  5641ms  err=
+    [instance_012/r12] ❌  tok=7287  6093ms  err=
+    [instance_013/r13] ❌  tok=7322  6246ms  err=
+    [instance_014/r14] ❌  tok=7281  6046ms  err=
+    [instance_015/r15] ❌  tok=7311  6146ms  err=
+    [instance_016/r16] ✅  tok=7263  5835ms  err=
+    [instance_017/r17] ✅  tok=7288  6032ms  err=
+    [instance_018/r18] ❌  tok=7279  5994ms  err=
+    [instance_019/r19] ✅  tok=7276  5933ms  err=
+    [instance_020/r20] ❌  tok=7302  6138ms  err=
+    [instance_021/r21] ❌  tok=7293  5715ms  err=
+    [instance_022/r22] ✅  tok=7282  6130ms  err=
+    [instance_023/r23] ❌  tok=7275  5790ms  err=
+    [instance_024/r24] ✅  tok=7291  5851ms  err=
+    [instance_025/r25] ✅  tok=7275  5917ms  err=
+    [instance_026/r26] ❌  tok=7285  5954ms  err=
+    [instance_027/r27] ✅  tok=7272  5820ms  err=
+    [instance_028/r28] ✅  tok=7290  5845ms  err=
+    [instance_029/r29] ❌  tok=7294  5528ms  err=
+    [instance_000/r30] ❌  tok=7306  5530ms  err=
+    [instance_001/r31] ✅  tok=7278  5848ms  err=
+    [instance_002/r32] ✅  tok=7269  5935ms  err=
+    [instance_003/r33] ❌  tok=7307  6328ms  err=
+    [instance_004/r34] ❌  tok=7302  5724ms  err=
+    [instance_005/r35] ✅  tok=7296  6136ms  err=
+    [instance_006/r36] ✅  tok=7289  5655ms  err=
+    [instance_007/r37] ✅  tok=7277  5730ms  err=
+    [instance_008/r38] ✅  tok=7303  6138ms  err=
+    [instance_009/r39] ❌  tok=7303  5923ms  err=
+    [instance_010/r40] ✅  tok=7294  5627ms  err=
+    [instance_011/r41] ❌  tok=7307  6083ms  err=
+    [instance_012/r42] ❌  tok=7287  5914ms  err=
+    [instance_013/r43] ❌  tok=7322  6170ms  err=
+    [instance_014/r44] ❌  tok=7281  6011ms  err=
+    [instance_015/r45] ❌  tok=7311  6234ms  err=
+    [instance_016/r46] ✅  tok=7263  5681ms  err=
+    [instance_017/r47] ✅  tok=7288  6004ms  err=
+    [instance_018/r48] ❌  tok=7279  6169ms  err=
+    [instance_019/r49] ✅  tok=7276  6418ms  err=
+    → TSR=50% (25/50)  ADF=0.000  avg_tok=7291
+
+  [L0]
+    [instance_000/r0] ❌  tok=7650  6469ms  err=
+    [instance_001/r1] ✅  tok=7649  6310ms  err=
+    [instance_002/r2] ✅  tok=7630  6213ms  err=
+    [instance_003/r3] ❌  tok=7754  6773ms  err=
+    [instance_004/r4] ❌  tok=7646  6117ms  err=
+    [instance_005/r5] ✅  tok=7654  6284ms  err=
+    [instance_006/r6] ✅  tok=7610  5963ms  err=
+    [instance_007/r7] ✅  tok=7635  6331ms  err=
+    [instance_008/r8] ✅  tok=7645  6049ms  err=
+    [instance_009/r9] ❌  tok=7671  5945ms  err=
+    [instance_010/r10] ✅  tok=7646  6146ms  err=
+    [instance_011/r11] ❌  tok=7629  5848ms  err=
+    [instance_012/r12] ❌  tok=7670  6019ms  err=
+    [instance_013/r13] ❌  tok=7664  5977ms  err=
+    [instance_014/r14] ❌  tok=7641  6019ms  err=
+    [instance_015/r15] ❌  tok=7675  6387ms  err=
+    [instance_016/r16] ✅  tok=7661  5988ms  err=
+    [instance_017/r17] ✅  tok=7638  6461ms  err=
+    [instance_018/r18] ❌  tok=7613  6158ms  err=
+    [instance_019/r19] ✅  tok=7640  6265ms  err=
+    [instance_020/r20] ❌  tok=7664  6010ms  err=
+    [instance_021/r21] ❌  tok=3060  11321ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_022/r22] ✅  tok=7646  6234ms  err=
+    [instance_023/r23] ❌  tok=7667  6046ms  err=
+    [instance_024/r24] ✅  tok=7655  6347ms  err=
+    [instance_025/r25] ✅  tok=7639  6229ms  err=
+    [instance_026/r26] ❌  tok=7623  6034ms  err=
+    [instance_027/r27] ✅  tok=7614  6154ms  err=
+    [instance_028/r28] ✅  tok=7648  6093ms  err=
+    [instance_029/r29] ❌  tok=7630  6071ms  err=
+    [instance_000/r30] ❌  tok=7650  5922ms  err=
+    [instance_001/r31] ✅  tok=7649  6250ms  err=
+    [instance_002/r32] ✅  tok=7630  6064ms  err=
+    [instance_003/r33] ❌  tok=7754  6281ms  err=
+    [instance_004/r34] ❌  tok=7646  6266ms  err=
+    [instance_005/r35] ✅  tok=7654  6245ms  err=
+    [instance_006/r36] ✅  tok=7610  6170ms  err=
+    [instance_007/r37] ✅  tok=7635  6117ms  err=
+    [instance_008/r38] ✅  tok=7645  6106ms  err=
+    [instance_009/r39] ❌  tok=7671  6180ms  err=
+    [instance_010/r40] ✅  tok=7646  5895ms  err=
+    [instance_011/r41] ❌  tok=7629  5982ms  err=
+    [instance_012/r42] ❌  tok=7670  6038ms  err=
+    [instance_013/r43] ❌  tok=7664  6139ms  err=
+    [instance_014/r44] ❌  tok=7641  6837ms  err=
+    [instance_015/r45] ❌  tok=7675  6186ms  err=
+    [instance_016/r46] ✅  tok=7661  6208ms  err=
+    [instance_017/r47] ✅  tok=7638  6210ms  err=
+    [instance_018/r48] ❌  tok=7613  6208ms  err=
+    [instance_019/r49] ✅  tok=7640  6185ms  err=
+    → TSR=50% (25/50)  ADF=0.385  avg_tok=7558
+
+  [L1]
+    [instance_000/r0] ❌  tok=7486  6162ms  err=
+    [instance_001/r1] ✅  tok=7485  5977ms  err=
+    [instance_002/r2] ✅  tok=7468  5701ms  err=
+    [instance_003/r3] ❌  tok=7590  6257ms  err=
+    [instance_004/r4] ❌  tok=7484  5789ms  err=
+    [instance_005/r5] ✅  tok=7492  6020ms  err=
+    [instance_006/r6] ✅  tok=7448  6014ms  err=
+    [instance_007/r7] ✅  tok=7471  6109ms  err=
+    [instance_008/r8] ✅  tok=7483  6019ms  err=
+    [instance_009/r9] ❌  tok=7509  6073ms  err=
+    [instance_010/r10] ✅  tok=7484  6032ms  err=
+    [instance_011/r11] ❌  tok=7467  5922ms  err=
+    [instance_012/r12] ❌  tok=7506  5926ms  err=
+    [instance_013/r13] ❌  tok=7502  6279ms  err=
+    [instance_014/r14] ❌  tok=7479  6126ms  err=
+    [instance_015/r15] ❌  tok=7513  6061ms  err=
+    [instance_016/r16] ✅  tok=7499  6615ms  err=
+    [instance_017/r17] ✅  tok=7476  5872ms  err=
+    [instance_018/r18] ❌  tok=7451  6173ms  err=
+    [instance_019/r19] ✅  tok=7476  5882ms  err=
+    [instance_020/r20] ❌  tok=7502  6120ms  err=
+    [instance_021/r21] ❌  tok=2900  11296ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_022/r22] ✅  tok=7484  6253ms  err=
+    [instance_023/r23] ❌  tok=7505  5975ms  err=
+    [instance_024/r24] ✅  tok=7493  6229ms  err=
+    [instance_025/r25] ✅  tok=7477  6204ms  err=
+    [instance_026/r26] ❌  tok=7461  6083ms  err=
+    [instance_027/r27] ✅  tok=7452  5532ms  err=
+    [instance_028/r28] ✅  tok=7484  5827ms  err=
+    [instance_029/r29] ❌  tok=7466  5834ms  err=
+    [instance_000/r30] ❌  tok=7486  5898ms  err=
+    [instance_001/r31] ✅  tok=7485  6019ms  err=
+    [instance_002/r32] ✅  tok=7468  6125ms  err=
+    [instance_003/r33] ❌  tok=7590  5936ms  err=
+    [instance_004/r34] ❌  tok=7482  6029ms  err=
+    [instance_005/r35] ✅  tok=7492  5737ms  err=
+    [instance_006/r36] ✅  tok=7448  5920ms  err=
+    [instance_007/r37] ✅  tok=7471  6284ms  err=
+    [instance_008/r38] ✅  tok=7483  5700ms  err=
+    [instance_009/r39] ❌  tok=7509  6105ms  err=
+    [instance_010/r40] ✅  tok=7484  6098ms  err=
+    [instance_011/r41] ❌  tok=7467  5823ms  err=
+    [instance_012/r42] ❌  tok=7508  9027ms  err=
+    [instance_013/r43] ❌  tok=7502  6580ms  err=
+    [instance_014/r44] ❌  tok=7479  6063ms  err=
+    [instance_015/r45] ❌  tok=7513  6261ms  err=
+    [instance_016/r46] ✅  tok=7499  6657ms  err=
+    [instance_017/r47] ✅  tok=7476  5971ms  err=
+    [instance_018/r48] ❌  tok=7451  6275ms  err=
+    [instance_019/r49] ✅  tok=7476  6124ms  err=
+    → TSR=50% (25/50)  ADF=0.769  avg_tok=7395
+
+  [L2]
+    [instance_000/r0] ❌  tok=12307  10356ms  err=
+    [instance_001/r1] ✅  tok=12276  10100ms  err=
+    [instance_002/r2] ✅  tok=12251  10965ms  err=
+    [instance_003/r3] ❌  tok=12416  10486ms  err=
+    [instance_004/r4] ❌  tok=12301  9934ms  err=
+    [instance_005/r5] ✅  tok=12299  10383ms  err=
+    [instance_006/r6] ✅  tok=12251  10460ms  err=
+    [instance_007/r7] ✅  tok=12259  10220ms  err=
+    [instance_008/r8] ✅  tok=12297  10401ms  err=
+    [instance_009/r9] ❌  tok=12327  10270ms  err=
+    [instance_010/r10] ✅  tok=12299  10287ms  err=
+    [instance_011/r11] ❌  tok=12289  10222ms  err=
+    [instance_012/r12] ❌  tok=12314  10198ms  err=
+    [instance_013/r13] ❌  tok=12333  10387ms  err=
+    [instance_014/r14] ❌  tok=12273  10709ms  err=
+    [instance_015/r15] ❌  tok=12335  10483ms  err=
+    [instance_016/r16] ✅  tok=12307  10482ms  err=
+    [instance_017/r17] ✅  tok=12272  10253ms  err=
+    [instance_018/r18] ❌  tok=12241  15807ms  err=
+    [instance_019/r19] ✅  tok=12263  10254ms  err=
+    [instance_020/r20] ❌  tok=12319  10329ms  err=
+    [instance_021/r21] ❌  tok=5900  18932ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_022/r22] ✅  tok=12277  10165ms  err=
+    [instance_023/r23] ❌  tok=12325  10136ms  err=
+    [instance_024/r24] ✅  tok=12295  10617ms  err=
+    [instance_025/r25] ✅  tok=12267  10148ms  err=
+    [instance_026/r26] ❌  tok=12261  10464ms  err=
+    [instance_027/r27] ✅  tok=12243  10484ms  err=
+    [instance_028/r28] ✅  tok=12287  10622ms  err=
+    [instance_029/r29] ❌  tok=12291  9827ms  err=
+    [instance_000/r30] ❌  tok=12307  10610ms  err=
+    [instance_001/r31] ✅  tok=12278  10972ms  err=
+    [instance_002/r32] ✅  tok=12251  10156ms  err=
+    [instance_003/r33] ❌  tok=12416  10215ms  err=
+    [instance_004/r34] ❌  tok=12299  10229ms  err=
+    [instance_005/r35] ✅  tok=12299  9782ms  err=
+    [instance_006/r36] ✅  tok=12251  10184ms  err=
+    [instance_007/r37] ✅  tok=12261  10422ms  err=
+    [instance_008/r38] ✅  tok=12295  10483ms  err=
+    [instance_009/r39] ❌  tok=12327  9912ms  err=
+    [instance_010/r40] ✅  tok=12299  9918ms  err=
+    [instance_011/r41] ❌  tok=12287  10146ms  err=
+    [instance_012/r42] ❌  tok=12312  10470ms  err=
+    [instance_013/r43] ❌  tok=12333  10622ms  err=
+    [instance_014/r44] ❌  tok=12271  10571ms  err=
+    [instance_015/r45] ❌  tok=12335  10485ms  err=
+    [instance_016/r46] ✅  tok=12307  10378ms  err=
+    [instance_017/r47] ✅  tok=12272  10047ms  err=
+    [instance_018/r48] ❌  tok=12241  10083ms  err=
+    [instance_019/r49] ✅  tok=12263  10232ms  err=
+    → TSR=50% (25/50)  ADF=1.074  avg_tok=12166
+
+  [L3]
+    [instance_000/r0] ❌  tok=12685  12045ms  err=
+    [instance_001/r1] ✅  tok=12689  11197ms  err=
+    [instance_002/r2] ✅  tok=12669  11249ms  err=
+    [instance_003/r3] ❌  tok=12743  10843ms  err=
+    [instance_004/r4] ❌  tok=12742  11470ms  err=
+    [instance_005/r5] ❌  tok=15443  12621ms  err=
+    [instance_006/r6] ✅  tok=12685  11085ms  err=
+    [instance_007/r7] ✅  tok=12626  10799ms  err=
+    [instance_008/r8] ✅  tok=12706  47189ms  err=
+    [instance_009/r9] ❌  tok=12758  10928ms  err=
+    [instance_010/r10] ✅  tok=12724  11618ms  err=
+    [instance_011/r11] ❌  tok=12718  12187ms  err=
+    [instance_012/r12] ❌  tok=12771  11259ms  err=
+    [instance_013/r13] ✅  tok=15650  12291ms  err=
+    [instance_014/r14] ✅  tok=15468  12594ms  err=
+    [instance_015/r15] ❌  tok=12818  11673ms  err=
+    [instance_016/r16] ✅  tok=12723  11008ms  err=
+    [instance_017/r17] ❌  tok=15507  12746ms  err=
+    [instance_018/r18] ❌  tok=12679  10958ms  err=
+    [instance_019/r19] ❌  tok=15523  14131ms  err=
+    [instance_020/r20] ✅  tok=15671  14670ms  err=
+    [instance_021/r21] ❌  tok=12788  12326ms  err=
+    [instance_022/r22] ✅  tok=12686  12530ms  err=
+    [instance_023/r23] ✅  tok=15645  13824ms  err=
+    [instance_024/r24] ❌  tok=15500  13022ms  err=
+    [instance_025/r25] ❌  tok=15356  12071ms  err=
+    [instance_026/r26] ✅  tok=15488  11973ms  err=
+    [instance_027/r27] ✅  tok=12718  10956ms  err=
+    [instance_028/r28] ✅  tok=12654  11088ms  err=
+    [instance_029/r29] ❌  tok=12758  11405ms  err=
+    [instance_000/r30] ❌  tok=12685  10983ms  err=
+    [instance_001/r31] ✅  tok=12689  11271ms  err=
+    [instance_002/r32] ✅  tok=12669  11073ms  err=
+    [instance_003/r33] ❌  tok=12739  11402ms  err=
+    [instance_004/r34] ❌  tok=12740  11418ms  err=
+    [instance_005/r35] ❌  tok=15443  12902ms  err=
+    [instance_006/r36] ✅  tok=12685  10853ms  err=
+    [instance_007/r37] ✅  tok=12626  11045ms  err=
+    [instance_008/r38] ✅  tok=12706  11185ms  err=
+    [instance_009/r39] ❌  tok=12758  11457ms  err=
+    [instance_010/r40] ✅  tok=12724  11263ms  err=
+    [instance_011/r41] ❌  tok=12716  10949ms  err=
+    [instance_012/r42] ❌  tok=12773  11835ms  err=
+    [instance_013/r43] ✅  tok=15648  12832ms  err=
+    [instance_014/r44] ✅  tok=15468  12373ms  err=
+    [instance_015/r45] ❌  tok=12818  11294ms  err=
+    [instance_016/r46] ✅  tok=12723  10655ms  err=
+    [instance_017/r47] ❌  tok=15507  12792ms  err=
+    [instance_018/r48] ❌  tok=12679  11615ms  err=
+    [instance_019/r49] ❌  tok=15521  12141ms  err=
+    → TSR=48% (24/50)  ADF=1.843  avg_tok=13558
+
+  [L4]
+    [instance_000/r0] ❌  tok=19382  15287ms  err=
+    [instance_001/r1] ❌  tok=25827  19474ms  err=
+    [instance_002/r2] ✅  tok=19303  15583ms  err=
+    [instance_003/r3] ❌  tok=19234  15273ms  err=
+    [instance_004/r4] ❌  tok=19432  15929ms  err=
+    [instance_005/r5] ❌  tok=22144  16583ms  err=
+    [instance_006/r6] ❌  tok=25607  19893ms  err=
+    [instance_007/r7] ✅  tok=19261  15063ms  err=
+    [instance_008/r8] ✅  tok=19392  15337ms  err=
+    [instance_009/r9] ❌  tok=19456  15415ms  err=
+    [instance_010/r10] ✅  tok=19406  15001ms  err=
+    [instance_011/r11] ❌  tok=19418  15304ms  err=
+    [instance_012/r12] ✅  tok=26351  18346ms  err=
+    [instance_013/r13] ✅  tok=26402  19292ms  err=
+    [instance_014/r14] ✅  tok=26224  20127ms  err=
+    [instance_015/r15] ❌  tok=19515  15734ms  err=
+    [instance_016/r16] ✅  tok=19397  15653ms  err=
+    [instance_017/r17] ❌  tok=22194  54102ms  err=
+    [instance_018/r18] ❌  tok=19332  15245ms  err=
+    [instance_019/r19] ❌  tok=22191  17270ms  err=
+    [instance_020/r20] ✅  tok=26470  20333ms  err=
+    [instance_021/r21] ❌  tok=19469  15811ms  err=
+    [instance_022/r22] ✅  tok=19331  15068ms  err=
+    [instance_023/r23] ✅  tok=22491  17871ms  err=
+    [instance_024/r24] ❌  tok=22199  17028ms  err=
+    [instance_025/r25] ❌  tok=22038  16604ms  err=
+    [instance_026/r26] ✅  tok=22301  16940ms  err=
+    [instance_027/r27] ❌  tok=23244  18113ms  err=step 'ESCALATION' failed: model did not emit a tool call
+    [instance_028/r28] ✅  tok=19320  15506ms  err=
+    [instance_029/r29] ✅  tok=26426  19778ms  err=
+    [instance_000/r30] ❌  tok=19382  20460ms  err=
+    [instance_001/r31] ✅  tok=19333  15958ms  err=
+    [instance_002/r32] ✅  tok=19305  15938ms  err=
+    [instance_003/r33] ❌  tok=19443  15547ms  err=
+    [instance_004/r34] ❌  tok=19430  15771ms  err=
+    [instance_005/r35] ❌  tok=22144  17930ms  err=
+    [instance_006/r36] ❌  tok=25607  18659ms  err=
+    [instance_007/r37] ❌  tok=25566  19386ms  err=
+    [instance_008/r38] ❌  tok=25716  18448ms  err=
+    [instance_009/r39] ✅  tok=26385  19277ms  err=
+    [instance_010/r40] ✅  tok=19406  20393ms  err=
+    [instance_011/r41] ❌  tok=19416  15451ms  err=
+    [instance_012/r42] ✅  tok=26349  19626ms  err=
+    [instance_013/r43] ✅  tok=22509  17508ms  err=
+    [instance_014/r44] ✅  tok=26224  19038ms  err=
+    [instance_015/r45] ❌  tok=19515  14885ms  err=
+    [instance_016/r46] ✅  tok=19397  15091ms  err=
+    [instance_017/r47] ❌  tok=22194  17215ms  err=
+    [instance_018/r48] ❌  tok=19332  15561ms  err=
+    [instance_019/r49] ❌  tok=22191  17531ms  err=
+    → TSR=44% (22/50)  ADF=2.340  avg_tok=21832
+
+  [L5]
+    [instance_000/r0] ❌  tok=20735  17003ms  err=
+    [instance_001/r1] ❌  tok=25876  18903ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed
+    [instance_002/r2] ✅  tok=21146  20050ms  err=
+    [instance_003/r3] ❌  tok=25937  18412ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed
+    [instance_004/r4] ❌  tok=20769  16815ms  err=
+    [instance_005/r5] ❌  tok=25931  19547ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed
+    [instance_006/r6] ❌  tok=27189  20799ms  err=
+    [instance_007/r7] ❌  tok=25845  18668ms  err=step 'ESCALATION' failed: validation_tool output failed vali
+    [instance_008/r8] ❌  tok=27255  20962ms  err=
+    [instance_009/r9] ❌  tok=28301  20453ms  err=
+    [instance_010/r10] ✅  tok=28316  21083ms  err=
+    [instance_011/r11] ❌  tok=20767  17215ms  err=
+    [instance_012/r12] ✅  tok=28307  22796ms  err=
+    [instance_013/r13] ❌  tok=4089  13522ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_014/r14] ✅  tok=27787  21159ms  err=
+    [instance_015/r15] ❌  tok=21154  17990ms  err=
+    [instance_016/r16] ✅  tok=28489  21845ms  err=
+    [instance_017/r17] ✅  tok=21140  18467ms  err=
+    [instance_018/r18] ❌  tok=20665  17265ms  err=
+    [instance_019/r19] ❌  tok=25813  18858ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed
+    [instance_020/r20] ✅  tok=28029  20982ms  err=
+    [instance_021/r21] ❌  tok=25949  18829ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed
+    [instance_022/r22] ✅  tok=20652  17093ms  err=
+    [instance_023/r23] ✅  tok=28436  23059ms  err=
+    [instance_024/r24] ❌  tok=25770  18499ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed
+    [instance_025/r25] ❌  tok=9171  17100ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_026/r26] ❌  tok=20625  16501ms  err=
+    [instance_027/r27] ❌  tok=27635  21957ms  err=
+    [instance_028/r28] ✅  tok=28677  21297ms  err=
+    [instance_029/r29] ✅  tok=27843  21060ms  err=
+    [instance_000/r30] ❌  tok=20734  17075ms  err=
+    [instance_001/r31] ❌  tok=25876  19117ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed

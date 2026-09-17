@@ -1,4 +1,34 @@
 {
+  "branching_ecl|amazon.nova-micro-v1:0": {
+    "family": "branching_ecl",
+    "model": "amazon.nova-micro-v1:0",
+    "spearman_rho": -0.9157,
+    "p_value": 0.0014,
+    "n_violations": 1,
+    "n_rungs": 8,
+    "adf_rates": [
+      0.0,
+      0.38461538461538464,
+      0.7692307692307693,
+      1.0740312501386837,
+      1.843262019369453,
+      2.34037019258506,
+      3.606709135031436,
+      3.7990168273391283
+    ],
+    "di_vals": [
+      1.0,
+      1.0,
+      0.9938,
+      0.9781,
+      0.9781,
+      0.8875,
+      0.97,
+      0.9325
+    ],
+    "p_adj": 0.007,
+    "h1_supported": true
+  },
   "finance_ecl|amazon.nova-micro-v1:0": {
     "family": "finance_ecl",
     "model": "amazon.nova-micro-v1:0",
@@ -32,23 +62,31 @@
   "finance_ecl|amazon.nova-pro-v1:0": {
     "family": "finance_ecl",
     "model": "amazon.nova-pro-v1:0",
-    "spearman_rho": -0.8,
-    "p_value": 0.2,
-    "n_violations": 1,
-    "n_rungs": 4,
+    "spearman_rho": -0.6429,
+    "p_value": 0.0856,
+    "n_violations": 4,
+    "n_rungs": 8,
     "adf_rates": [
       0.0,
       0.38095238095238093,
       0.8571428571428571,
-      1.1590404763278392
+      1.1590404763278392,
+      1.920945238232601,
+      2.3632172563063842,
+      3.56739403628493,
+      3.75787022676112
     ],
     "di_vals": [
       1.0,
       0.9531,
       0.9766,
-      0.7531
+      0.7734,
+      0.8906,
+      0.8594,
+      0.8724,
+      0.8828
     ],
-    "p_adj": 0.4211,
+    "p_adj": 0.3028,
     "h1_supported": false
   },
   "finance_ecl|google.gemma-3-27b-it": {
@@ -108,7 +146,7 @@
       0.9792,
       0.9896
     ],
-    "p_adj": 0.4211,
+    "p_adj": 0.3028,
     "h1_supported": false
   }
 }
