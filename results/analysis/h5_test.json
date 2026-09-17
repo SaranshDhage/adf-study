@@ -1,0 +1,16 @@
+{
+  "finance_ecl|amazon.nova-micro-v1:0": {
+    "family": "finance_ecl",
+    "model": "amazon.nova-micro-v1:0",
+    "di_tool": 0.9869791666666666,
+    "rr_tool": 1.0,
+    "tsr_tool": 0.92,
+    "di_codegen": 0.984375,
+    "rr_codegen": 0.0,
+    "tsr_codegen": 0.0,
+    "di_diff": 0.0026,
+    "tsr_diff": null,
+    "h5_di_indistinguishable": true,
+    "h5_tsr_indistinguishable": false
+  }
+}

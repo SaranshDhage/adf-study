@@ -1,0 +1,14 @@
+{
+  "finance_ecl": {
+    "family": "finance_ecl",
+    "optimal_adf_by_model": {
+      "amazon.nova-micro-v1:0": 1.920945238232601,
+      "google.gemma-3-27b-it": 0.0
+    },
+    "primary_pair_correct": true,
+    "monotone_order": [
+      1.920945238232601,
+      0.0
+    ]
+  }
+}

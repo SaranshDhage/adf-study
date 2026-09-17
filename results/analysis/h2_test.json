@@ -1,0 +1,33 @@
+{
+  "finance_ecl|amazon.nova-micro-v1:0": {
+    "family": "finance_ecl",
+    "model": "amazon.nova-micro-v1:0",
+    "argmax_rung": "L3",
+    "argmax_index": 4,
+    "is_interior_max": true,
+    "tsr_at_L0prime": 0.9636,
+    "tsr_peak": 1.0,
+    "tsr_at_L6": 1.0,
+    "adf_rates": [
+      0.0,
+      0.38095238095238093,
+      0.8571428571428571,
+      1.1590404763278392,
+      1.920945238232601,
+      2.3632172563063842,
+      3.56739403628493,
+      3.75787022676112
+    ],
+    "tsr_vals": [
+      0.9636,
+      0.96,
+      0.96,
+      0.96,
+      1.0,
+      1.0,
+      0.92,
+      1.0
+    ],
+    "h2_supported": false
+  }
+}
