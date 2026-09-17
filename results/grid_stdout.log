@@ -2357,3 +2357,158 @@ Already done:  0 runs
     [instance_029/r29] ✅  tok=27843  21060ms  err=
     [instance_000/r30] ❌  tok=20734  17075ms  err=
     [instance_001/r31] ❌  tok=25876  19117ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed
+    [instance_002/r32] ✅  tok=21148  18267ms  err=
+    [instance_003/r33] ❌  tok=25937  18708ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed
+    [instance_004/r34] ❌  tok=20769  54328ms  err=
+    [instance_005/r35] ❌  tok=25931  18571ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed
+    [instance_006/r36] ❌  tok=27189  20458ms  err=
+    [instance_007/r37] ❌  tok=25845  18464ms  err=step 'ESCALATION' failed: validation_tool output failed vali
+    [instance_008/r38] ❌  tok=27255  20240ms  err=
+    [instance_009/r39] ❌  tok=28301  19877ms  err=
+    [instance_010/r40] ✅  tok=28316  20760ms  err=
+    [instance_011/r41] ❌  tok=20767  17084ms  err=
+    [instance_012/r42] ✅  tok=28308  25113ms  err=
+    [instance_013/r43] ❌  tok=4087  13129ms  err=run-level exception: An error occurred (ModelErrorException)
+    [instance_014/r44] ✅  tok=27787  21508ms  err=
+    [instance_015/r45] ❌  tok=21154  18274ms  err=
+    [instance_016/r46] ❌  tok=27661  21933ms  err=
+    [instance_017/r47] ✅  tok=21138  18815ms  err=
+    [instance_018/r48] ❌  tok=20665  17280ms  err=
+    [instance_019/r49] ❌  tok=25815  19232ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed
+    → TSR=32% (16/50)  ADF=3.607  avg_tok=23860
+
+  [L6]
+    [instance_000/r0] ✅  tok=24710  19653ms  err=
+    [instance_001/r1] ❌  tok=26351  19821ms  err=step 'GENERATE_REPORT' failed: escalation_tool output failed
+    [instance_002/r2] ✅  tok=20725  17453ms  err=
+    [instance_003/r3] ❌  tok=20594  16997ms  err=
+    [instance_004/r4] ❌  tok=20807  17293ms  err=
+    [instance_005/r5] ✅  tok=20831  18135ms  err=
+    [instance_006/r6] ❌  tok=27320  20414ms  err=
+    [instance_007/r7] ❌  tok=24480  21309ms  err=
+    [instance_008/r8] ✅  tok=20780  16615ms  err=
+    [instance_009/r9] ✅  tok=35584  24470ms  err=
+    [instance_010/r10] ✅  tok=20811  17487ms  err=
+    [instance_011/r11] ❌  tok=21503  19911ms  err=
+    [instance_012/r12] ✅  tok=27948  20614ms  err=
+    [instance_013/r13] ❌  tok=20885  18044ms  err=
+    [instance_014/r14] ✅  tok=27886  20233ms  err=
+    [instance_015/r15] ❌  tok=20895  18139ms  err=
+    [instance_016/r16] ✅  tok=28475  20079ms  err=
+    [instance_017/r17] ✅  tok=21293  18539ms  err=
+    [instance_018/r18] ❌  tok=26195  19404ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed
+    [instance_019/r19] ✅  tok=28543  21328ms  err=
+    [instance_020/r20] ❌  tok=26194  19862ms  err=step 'ESCALATION' failed: report_generator output failed val
+    [instance_021/r21] ❌  tok=26173  18816ms  err=step 'GENERATE_REPORT' failed: escalation_tool output failed
+    [instance_022/r22] ✅  tok=20751  16560ms  err=
+    [instance_023/r23] ❌  tok=20782  17039ms  err=
+    [instance_024/r24] ❌  tok=26005  18455ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed
+    [instance_025/r25] ✅  tok=20671  16586ms  err=
+    [instance_026/r26] ❌  tok=20744  16754ms  err=
+    [instance_027/r27] ✅  tok=20735  17313ms  err=
+    [instance_028/r28] ✅  tok=20768  17052ms  err=
+    [instance_029/r29] ✅  tok=32086  23896ms  err=
+    [instance_000/r30] ✅  tok=24710  20297ms  err=
+    [instance_001/r31] ❌  tok=26351  19701ms  err=step 'GENERATE_REPORT' failed: escalation_tool output failed
+    [instance_002/r32] ✅  tok=20725  17623ms  err=
+    [instance_003/r33] ✅  tok=24923  22114ms  err=
+    [instance_004/r34] ❌  tok=20807  16801ms  err=
+    [instance_005/r35] ✅  tok=20831  17118ms  err=
+    [instance_006/r36] ❌  tok=27320  20769ms  err=
+    [instance_007/r37] ❌  tok=27349  21917ms  err=step 'ESCALATION' failed: report_generator output failed val
+    [instance_008/r38] ❌  tok=27356  20322ms  err=
+    [instance_009/r39] ✅  tok=35584  24138ms  err=
+    [instance_010/r40] ✅  tok=20811  16964ms  err=
+    [instance_011/r41] ❌  tok=21501  18638ms  err=
+    [instance_012/r42] ✅  tok=27950  20428ms  err=
+    [instance_013/r43] ❌  tok=20885  17181ms  err=
+    [instance_014/r44] ✅  tok=27886  20184ms  err=
+    [instance_015/r45] ❌  tok=20897  17405ms  err=
+    [instance_016/r46] ✅  tok=28476  20457ms  err=
+    [instance_017/r47] ✅  tok=21293  18841ms  err=
+    [instance_018/r48] ❌  tok=26195  19030ms  err=step 'GENERATE_REPORT' failed: validation_tool output failed
+    [instance_019/r49] ✅  tok=28545  20918ms  err=
+    → TSR=54% (27/50)  ADF=3.799  avg_tok=24438
+
+  [L5_codegen  H5-pair]
+    [instance_000/r0] ❌  tok=3276  6735ms
+    [instance_001/r1] ❌  tok=3870  7386ms
+    [instance_002/r2] ❌  tok=3498  6955ms
+    [instance_003/r3] ❌  tok=3102  6424ms
+    [instance_004/r4] ❌  tok=7028  10266ms
+    [instance_005/r5] ❌  tok=3769  7568ms
+    [instance_006/r6] ❌  tok=3256  6347ms
+    [instance_007/r7] ❌  tok=3071  6610ms
+    [instance_008/r8] ❌  tok=3953  7322ms
+    [instance_009/r9] ❌  tok=4119  7117ms
+    [instance_010/r10] ❌  tok=4149  7412ms
+    [instance_011/r11] ❌  tok=3248  6844ms
+    [instance_012/r12] ❌  tok=3594  7030ms
+    [instance_013/r13] ❌  tok=3194  6711ms
+    [instance_014/r14] ❌  tok=7388  10551ms
+    [instance_015/r15] ❌  tok=3819  6802ms
+    [instance_016/r16] ❌  tok=3189  6714ms
+    [instance_017/r17] ❌  tok=7370  10639ms
+    [instance_018/r18] ❌  tok=4097  7117ms
+    [instance_019/r19] ❌  tok=4052  7944ms
+    [instance_020/r20] ❌  tok=6951  10505ms
+    [instance_021/r21] ❌  tok=3461  6787ms
+    [instance_022/r22] ❌  tok=4090  7970ms
+    [instance_023/r23] ❌  tok=3669  6869ms
+    [instance_024/r24] ❌  tok=3824  7115ms
+    [instance_025/r25] ❌  tok=7720  11334ms
+    [instance_026/r26] ❌  tok=3318  6413ms
+    [instance_027/r27] ❌  tok=3476  6602ms
+    [instance_028/r28] ❌  tok=4009  7142ms
+    [instance_029/r29] ❌  tok=7554  11479ms
+    [instance_000/r30] ❌  tok=4508  7757ms
+    [instance_001/r31] ❌  tok=3472  6782ms
+    [instance_002/r32] ❌  tok=4214  7330ms
+    [instance_003/r33] ❌  tok=7539  11378ms
+    [instance_004/r34] ❌  tok=3248  6885ms
+    [instance_005/r35] ❌  tok=4027  8124ms
+    [instance_006/r36] ❌  tok=3227  6239ms
+    [instance_007/r37] ❌  tok=3797  6868ms
+    [instance_008/r38] ❌  tok=4260  7587ms
+    [instance_009/r39] ❌  tok=4133  7417ms
+    [instance_010/r40] ❌  tok=4017  7761ms
+    [instance_011/r41] ❌  tok=6730  10191ms
+    [instance_012/r42] ❌  tok=3341  7142ms
+    [instance_013/r43] ❌  tok=3091  6134ms
+    [instance_014/r44] ❌  tok=4097  7485ms
+    [instance_015/r45] ❌  tok=3829  6728ms
+    [instance_016/r46] ❌  tok=3118  7006ms
+    [instance_017/r47] ❌  tok=3048  6436ms
+    [instance_018/r48] ❌  tok=4016  7474ms
+    [instance_019/r49] ❌  tok=3584  6757ms
+    → TSR=0% (0/50)  H5-codegen
+
+  DIAGNOSTICS (branching_ecl / amazon.nova-micro-v1:0):
+  ⚠ SATURATED-LOW: L5_codegen TSR=0% — no discriminating power
+
+============================================================
+  branching_ecl × google.gemma-3-27b-it
+============================================================
+
+  [L0prime]
+    [instance_000/r0] ❌  tok=11932  126292ms  err=
+    [instance_001/r1] ✅  tok=11902  110394ms  err=
+    [instance_002/r2] ✅  tok=11894  90129ms  err=
+    [instance_003/r3] ❌  tok=11937  90959ms  err=
+    [instance_004/r4] ❌  tok=11928  83513ms  err=
+    [instance_005/r5] ✅  tok=11918  87264ms  err=
+    [instance_006/r6] ✅  tok=11914  87880ms  err=
+    [instance_007/r7] ✅  tok=11899  88167ms  err=
+    [instance_008/r8] ✅  tok=11925  104652ms  err=
+    [instance_009/r9] ❌  tok=11929  109283ms  err=
+    [instance_010/r10] ✅  tok=11926  80097ms  err=
+    [instance_011/r11] ❌  tok=11933  87109ms  err=
+    [instance_012/r12] ❌  tok=11917  83065ms  err=
+    [instance_013/r13] ❌  tok=11944  88495ms  err=
+    [instance_014/r14] ❌  tok=10647  66975ms  err=
+    [instance_015/r15] ❌  tok=11933  87263ms  err=
+    [instance_016/r16] ✅  tok=11919  85618ms  err=
+    [instance_017/r17] ✅  tok=11909  83835ms  err=
+    [instance_018/r18] ❌  tok=11901  90311ms  err=
+    [instance_019/r19] ✅  tok=11898  93028ms  err=
+    [instance_020/r20] ❌  tok=11928  81316ms  err=
