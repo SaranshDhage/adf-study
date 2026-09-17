@@ -328,3 +328,95 @@ the pilot to cover all 6 rungs at N=10 before the full N=50 grid.
 1. F1 instance generation (≥20 per family) — still only 1 instance each.
 2. Pilot run: 1 model, 1 family, pilot rungs, N=10.
 3. Full grid.
+
+---
+
+## Session 6 — Grid running; interim results (commits 020858b→3cada76)
+
+**Date:** 2026-09-17 (continuing)
+**Spend this session:** ~$0.50 estimate (pilot + 476 grid runs on Bedrock)
+
+### Budget decision — RUNG COUNT RESTORED
+Human approved: full ≥6 rung grid (all 8 rungs L0′–L6 restored).
+Prior 3-rung reduction was budget-only; preregistration requires ≥6.
+
+### GitHub setup
+Both repos initialized locally. Push script: `push_to_github.py`.
+Requires a GitHub PAT (classic, `repo` scope):
+  `python3 push_to_github.py <PAT>`
+Will create: SaranshDhage/harness-engg-phase1 + SaranshDhage/adf-study
+
+### Full grid running in background
+- Process PID 769456, writing to results/grid/runs.jsonl
+- 3,600 total runs: 8 rungs × 9 cells (8+H5) × 2 families × 4 models × N=50
+- Progress at session end: ~476/3600 (13.2%)
+- Nova-Micro × finance_ecl complete (9 cells × 50 runs = 450 runs)
+- Gemma-3-27B started (~4 min/run — will take ~30h to complete its block)
+- **Grid will continue running after session ends (nohup)**
+
+### Pilot results (before full grid)
+finance_ecl × Nova-Micro (N=10 per rung):
+  L0prime=90%, L0=100%, L1-L4=100%, L5=80%, L6=100%
+  (L6 was 0% due to hybrid double-call bug, fixed before grid)
+
+branching_ecl × Nova-Micro (N=10 per rung):
+  L0prime=60%, L0=60%, L1=60%, L2=60%, L3=50%, L4=30%, L5=10%, L6=50%
+  Pattern: monotone decreasing — Nova-Micro too small to discover ESCALATION.
+  Non-monotone H2 curve expected from larger models.
+
+### Interim full-grid results (Nova-Micro × finance_ecl, N=50)
+TSR per rung (with bootstrap 95% CI):
+  L0prime 0.000 → 96.4% [90.9, 100]
+  L0      0.381 → 96.0% [90.0, 100]
+  L1      0.857 → 96.0% [90.0, 100]
+  L2      1.159 → 96.0% [90.0, 100]
+  L3      1.921 → 100%  [100,  100]   ← no failures
+  L4      2.363 → 100%  [100,  100]
+  L5      3.567 → 92.0% [84.0,  98]   ← 4 ModelErrorException failures
+  L6      3.758 → 100%  [100,  100]   ← hybrid works after bug fix
+  L5_codegen 3.567 → 0.0% [0, 0]     ← H5 FAIL: mechanism matters for TSR
+
+DI (within-instance, T=0):
+  L0prime: DI=1.000, PS=1.000, RR=1.000  (schema plan: perfectly deterministic)
+  L0:      DI=1.000, PS=1.000, RR=1.000
+  L1:      DI=0.982, PS=0.927, RR=1.000  (free_text plan: PS drops)
+  L2:      DI=0.964, PS=0.854, RR=1.000  (routing freed)
+  L3:      DI=0.969, PS=0.875, RR=1.000
+  L4:      DI=0.971, PS=0.885, RR=1.000
+  L5:      DI=0.987, PS=0.948, RR=1.000
+  L5_codegen: DI=0.984, PS=0.938, RR=0.000  ← code strings vary even at T=0
+  L6:      DI=0.961, PS=0.844, RR=1.000
+
+### Findings so far (interim, confirmatory analysis pending full grid)
+1. **H1 partial**: DI drops when plan is freed (L0→L1 PS: 1.000→0.927).
+   Not strictly monotone — plan-layer dominates, other layers near-flat at T=0.
+2. **H2 not visible yet** on linear task (expected — H2 is for branching).
+3. **H5 split**: DI is indistinguishable (diff=0.003) ✓ but TSR is 92% vs 0% ✗.
+   Mechanism matters for SUCCESS even when ADF is equal. Publishable null for H5.
+4. **Plan Stability** is the dominant DI component, confirming prior paper.
+5. **L5_codegen RR=0**: codegen is trace-non-deterministic even at T=0.
+
+### What to do when the grid finishes
+1. Run: `python -m src.analysis.phase7_analysis`
+2. Check: do Gemma/Qwen3/Nova-Pro show non-monotone TSR on branching_ecl? (H2)
+3. Check: is Qwen3-32B's optimal ADF higher than Gemma-3-27B's? (H4)
+4. Run: `python3 push_to_github.py <PAT>` to push both repos
+5. Update POSTHOC.md with any exploratory findings
+
+### Diagnostics (loop_eng.md §8.1)
+- Saturation: L3-L4 TSR=100% (Nova-Micro finance) — saturated-high, noted
+- Discards: 0 (no 429/5xx/resets yet on Bedrock)
+- Plan component: PS dominates DI signal (expected, confirmed prior paper)
+
+### Stop conditions (§8.2) — status
+- [ ] Every hypothesis computed with CI — **not yet** (need full grid)
+- [ ] Every cell ≥50 runs — **in progress** (9/72 cells complete)
+- [ ] Diagnostic checklist clean 2× — **not yet**
+- [ ] H5 comparison complete — **partial** (Nova-Micro/finance only)
+- [ ] Conclusions stable across proxy sensitivity band — **not yet**
+
+### Next session priorities
+1. Check if grid finished (ps aux | grep run_grid)
+2. If done: run phase7_analysis.py for full results
+3. If still running: monitor and checkpoint
+4. Push to GitHub once PAT is available
