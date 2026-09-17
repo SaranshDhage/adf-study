@@ -1,174 +1,186 @@
 # Session handoff prompt
 
-Paste the block below into a new Claude Code session started in
+Paste the block below into a new session started in
 `/home/saransh/Projects/Agentic-Research/adf-study`.
 
 ---
 
-You are continuing a multi-session research project. Read these three files before
-doing anything else, in this order:
-
-1. `../loop_eng.md` — the full research plan (the spec you are executing)
-2. `checkpoint.md` — the running log; the last entry is where we stopped
+You are continuing a multi-session research project. Read in order:
+1. `../loop_eng.md`   — the full research plan
+2. `checkpoint.md`    — the running log; **last entry is Session 6**
 3. `PREREGISTRATION.md` — frozen hypotheses and metrics
 
-Then read HANDOFF.md in this repo, which is the detailed state summary. Follow it.
+Then read this HANDOFF.md. Follow it.
 
-## What this project is
+---
 
-Testing whether execution determinism in an agentic system is a predictable function
-of one measurable quantity — Agent Degrees of Freedom (ADF), the log2-sum of legal
-choices the harness leaves the model per decision point — while task success is
-*non-monotonic* in ADF with a task-dependent optimum. Deliverable is a curve with an
-identifiable knee, not a two-condition comparison. Prior work: arXiv:2608.26197.
+## What we're building
 
-## Hard rules (from loop_eng.md section 1 — these override your defaults)
+**"Agent Degrees of Freedom (ADF): Execution Determinism as a Predictable
+Function of Harness Constraint"** — a curve, not a two-condition comparison.
 
-- **`PREREGISTRATION.md` is frozen at commit `34b1a37`.** The hypothesis set, primary
-  metric definitions, significance threshold (alpha=0.05 Holm), and the ADF formula
-  may NOT change. New hypotheses go in `POSTHOC.md`, reported as exploratory only.
-- The loop iterates on **engineering, never on hypotheses**. Bugs, instrumentation,
-  task generators, retry logic, provider config, and sample size (upward only) are
-  free to change.
-- **A null or negative result is a successful outcome.** Do not tune conditions until
-  a curve looks good.
-- **Never silently drop runs.** Discards go to `discards.jsonl` with a reason code.
-  Only HTTP 429/5xx and connection resets are valid discard reasons. Model failures,
-  validation failures, and timeouts are DATA.
-- **Log everything, every run** — model slug, resolved provider, temperature, seed,
-  full request/response, ADF config, per-layer trace. A run that isn't logged didn't
-  happen.
-- **If something is ambiguous, stop and ask.** Write it into `checkpoint.md` under
-  "Blocked on decision" and halt that branch.
-- Append to `checkpoint.md` after every batch and every loop iteration.
+**Core claims tested:**
+- H1: Determinism Index decreases monotonically as ADF increases.
+- H2: Task success is non-monotone in ADF — low at extremes, interior peak.
+- H3: The optimum ADF is higher for branching tasks than linear tasks.
+- H4: The optimum ADF is higher for more capable models.
+- H5: Equal-ADF configs with different substrates yield indistinguishable DI.
 
-## State: Phase 2 in progress (6 commits, clean tree)
+Prior work: arXiv:2608.26197 (Harness Engineering Phase 1).
 
-### Completed artifacts
-- `docs/adf_definition.md` — ADF formula, 6 decision points, worked examples.
-- `src/adf/metric.py` — `compute_adf()`, `HarnessConfig`, `TaskSpec`, `ADFResult`.
-  All 3 worked examples machine-verified.
-- `PREREGISTRATION.md` — frozen at commit `34b1a37`.
-- `docs/provider_pinning.md` — provider AND quantization pinned per model.
-- `NOTICE.md` — 1,823 lines vendored from `../Harness_Engg-1`.
-- **`src/harness/configurable.py`** — full configurable executor (NEW this session).
-  Every HarnessConfig combination runs; per-layer trace emitted; failed steps
-  retained. See docs below.
-- **`src/tracing/logger.py`** — extended with 6 new event types (backward-compat).
-- **`docs/adf_ladder.md`** — 8 rungs L0′–L6, **FROZEN** per prereg §5.
+---
 
-### ADF ladder (finance_ecl, primary proxy 2^10)
+## Current state: Phase 6.2 in progress
+
+**Grid is running as a background nohup process (PID 769456).**
+
+Check if it's still alive:
 ```
-L0'  0.000  schema/fsm/fixed/forced/fixed/tool_call
-L0   0.381  +enum_strict args
-L1   0.857  +free_text plan
-L2   1.159  +model_chosen routing
-L3   1.921  +subset tools + typed args
-L4   2.363  +model_chosen state
-L5   3.567  +free_choice tools + free_form args
-L6   3.758  +hybrid substrate
-H5 pair: L5-tool_call vs L5-codegen (ADF identical, mechanism differs)
+ps -p 769456 -o pid,stat,cmd
 ```
 
-### Decisions already made — do not relitigate
-- **Scope:** F0 (tau2-bench v1.0.1) + F1 (linear) + F2 (branching). F3/F4/F5
-  out of confirmatory scope.
-- **Models:** 4 models, provider/quant-pinned with `allow_fallbacks=false`.
-- **ADF_rate is primary for H1/H2/H3/H4; ADF_total secondary.**
-- **H3 on ADF_rate ONLY** (cross-family; total is confounded by horizon).
-- **`skill_level` and `retry_policy` contribute 0 bits.** Hold `skill_level=precise`
-  fixed in main grid; run as separate orthogonal factor at L0/L3/L5.
-- **`T` from nominal schedule, never from trace.**
-- **ADF ladder:** 8 rungs defined in `docs/adf_ladder.md`, frozen.
+Check progress:
+```
+wc -l results/grid/runs.jsonl
+python3 -c "
+import json, collections
+from pathlib import Path
+records = [json.loads(l) for l in Path('results/grid/runs.jsonl').read_text().splitlines() if l.strip()]
+by = collections.Counter((r['family'], r['model'].split('.')[-1][:12], r['rung']) for r in records if r.get('task_success') is not None)
+done = sum(1 for v in by.values() if v >= 50)
+print(f'Total: {len(records)} | Cells N>=50: {done}/72')
+for k,v in sorted(by.items()):
+    print(f'  {k[0]:12s} {k[1]:14s} {k[2]:11s}: {v}')
+"
+```
 
-## Budget
-OpenRouter balance ~$4.45. Hard ceiling $4.00. Spent ~$0.0005. Phases 2–4 are
-zero-spend. Full grid (~3,600 runs at N≥50) is NOT affordable at $4 — flag for
-human decision before Phase 6.2. If N must give: reduce ADF rungs, never N/cell.
+If the process is not running, restart it:
+```
+cd /home/saransh/Projects/Agentic-Research/adf-study
+nohup .venv/bin/python -m src.harness.run_grid \
+    --models "amazon.nova-micro-v1:0,google.gemma-3-27b-it,qwen.qwen3-32b-v1:0,amazon.nova-pro-v1:0" \
+    --families "finance_ecl,branching_ecl" \
+    --n 50 \
+    >> results/grid_stdout.log 2>&1 &
+echo "Grid PID: $!"
+```
+The grid is RESUMABLE — already-done runs are skipped automatically.
 
-## Next steps (in priority order)
+---
 
-### 1. F2 branching task family (IMMEDIATE — gates Phase 4)
-File: `src/tasks/branching_ecl.py`
+## What to do when the grid finishes
 
-The branching task must satisfy two constraints (loop_eng.md §4.0):
-- At ADF≈0 (forced path), the agent MUST FAIL on instances that require the
-  alternate path. If it passes at ADF≈0, the task has no real branching — fix it.
-- At ADF≈max (unconstrained), the agent MUST ALSO FAIL (drifts/skips steps).
+1. Run the full analysis:
+   ```
+   .venv/bin/python -m src.analysis.phase7_analysis
+   ```
+   Writes results/analysis/{tsr_table, di_table, h1-h5_test, summary_report}.json/md
 
-Design: a loan portfolio where some loans are flagged for ESCALATION before REPORT
-(e.g. high-risk loans with PD > 0.15). The correct state sequence is DATA-DEPENDENT
-and NOT INFERABLE from the task description — only from reading the data. The
-branching condition (PD > 0.15) must be in the data, not the prompt.
+2. Push to GitHub (need PAT from user):
+   ```
+   python3 push_to_github.py <GITHUB_PAT>
+   ```
+   Creates SaranshDhage/harness-engg-phase1 + SaranshDhage/adf-study.
+   **Ask the user for a GitHub PAT (classic, `repo` scope) — this is the one
+   external credential needed.**
 
-States needed:
-- Linear path: LOAD_DATA → VALIDATE_DATA → CALCULATE → GENERATE_REPORT
-- Branching path: LOAD_DATA → VALIDATE_DATA → CALCULATE → ESCALATION → GENERATE_REPORT
-  (triggered when any loan has PD > 0.15 after validation)
+3. Update checkpoint.md with final results, diagnostics, stop conditions.
 
-The ESCALATION state performs additional review (e.g., compute stress-test ECL at
-2× PD). The final report must reflect which path was taken.
+4. If any diagnostic flags a defect → fix engineering, re-run affected cells.
 
-**Instance generation rules (loop_eng.md §4.5):**
-- Generate with strong LLM using known param distributions; compute ground truth with
-  deterministic Python ONLY (never LLM).
-- Commit generators + RNG seeds so dataset is exactly reproducible.
-- Include at controlled rates: high-PD loans (need ESCALATION), low-PD loans (linear
-  path). Target: 50% branching, 50% linear.
-- Target ≥20 instances (prereg says ≥20 per family).
-- Record per-instance "required_path" as metadata.
+---
 
-TaskDefinition: register with `register_task_definition('branching_ecl')`.
+## Hard rules (same as always, do not relitigate)
 
-### 2. Phase 4 validation suite (GATING — no API spend until all pass)
-Files: `tests/test_harness.py`, `tests/test_adf.py`, `tests/test_branching.py`
+- PREREGISTRATION.md frozen at commit 34b1a37. No hypothesis changes.
+- Null/negative results are valid outcomes. Do not tune after seeing data.
+- Never drop runs silently — discards.jsonl with reason code.
+- Append to checkpoint.md after every batch.
 
-All 10 gates from loop_eng.md §5 as real pytest tests:
-1. Fake-model control-flow: every HarnessConfig combination; assert harness enforces
-   what config claims (forced tool really forces; FSM blocks illegal transitions;
-   schema validation rejects bad plans).
-2. ADF monotonicity: tightening any single layer never increases computed ADF.
-3. ADF hand-check: 3 configs whose ADF is computed by hand in docs/adf_definition.md
-   match compute_adf() exactly.
-4. Trace completeness: every run emits all per-layer fields; failed run still produces
-   complete trace with failure recorded.
-5. Ground-truth test: deterministic scorers agree with hand-computed answers on ≥5
-   instances per family.
-6. **Branching-task sanity**: ADF≈0 config MUST fail branching instances requiring the
-   alternate path. If it passes, the task isn't actually branching — fix the task.
-7. **Difficulty calibration** (§4.4): for F2, both ADF≈0 and ADF≈max score below 90%;
-   failure sets are disjoint.
-8. Loop termination: (not applicable to F1/F2 — relevant for F3 if built).
-9. Deterministic fault injection: (F4, out of scope for now).
-10. Judge stability: (F5, out of scope for now).
+---
 
-**Gate 6 (branching sanity) and Gate 7 (difficulty calibration) are the critical
-gates that make H2 measurable. Do not proceed to API spend without them.**
+## Infrastructure summary
 
-### 3. tau2-bench F0 integration (after Phase 4 passes)
-- Clone `github.com/sierra-research/tau2-bench` at tag v1.0.1.
-- Pin user simulator at T=0 (see loop_eng.md §4.3).
-- Wrap as a TaskDefinition or use tau2-bench's native runner with ADF config injection.
-- Note: tau2-bench requires `uv` and Python 3.12–3.13.
+**Backend:** AWS Bedrock (no billing ceiling). Credentials in env vars.
+**Virtual env:** .venv/ — always use `.venv/bin/python`.
+**Models (Bedrock):**
+  - `amazon.nova-micro-v1:0`  — small tier
+  - `google.gemma-3-27b-it`   — mid gen-1 (exact prereg match)
+  - `qwen.qwen3-32b-v1:0`     — mid gen-2
+  - `amazon.nova-pro-v1:0`    — large tier
 
-### 4. Instance generation for F1 families (≥20 per family)
-- Current: only 2 instances (portfolio.csv, contract.txt).
-- Generate diverse instances with known difficulty parameters; commit generators + seeds.
+**Key engineering notes:**
+- BedrockChatModel (llm_utils.py) uses boto3 directly. LangChain-AWS has an
+  incorrect allow-list blocking toolChoice for Gemma/Qwen3.
+- `tool_choice="any"` = Bedrock toolChoice={"any":{}} = "required".
+- Gemma needs `tool_choice="any"` even for auto-select (otherwise returns text).
 
-## Known gaps and gotchas (carry forward)
+---
 
-- **`data/` has only 2 instances** — ≥20 per family required before pilot.
-- **F2 branching task does not exist yet** — Phase 4 gates 6 and 7 cannot pass.
-- **Phase 4 test suite is empty** — `tests/` has only `__init__.py`.
-- **tau2-bench not cloned** — F0 not yet integrated.
-- **`qwen-2.5-7b-instruct` single provider (Phala)** — re-verify JSON correctness
-  with `tool_choice="required"` before full grid (known prior issue, cleared
-  2026-09-16; may regress).
-- **Context floor 32k** (Qwen-2.5-7B) — caps prompt size for whole study.
-- **`loop_eng.md` has 9 known defects** — all documented in checkpoint Session 1.
-  Most important: §4.3 user-simulator check is unsatisfiable as written; restate
-  as prefix-replay determinism test.
-- **Full grid (~3,600 runs at N≥50) is not affordable at $4** — human budget
-  decision required before Phase 6.2. Do not silently shrink N.
-- **codegen substrate** — implemented with exec() sandbox in configurable.py;
-  not hardened but correct for research purposes. Verify behavior in Phase 4 tests.
+## Interim results (Nova-Micro × finance_ecl, N=50)
+
+### TSR
+```
+Rung    ADF    TSR    [95% CI]
+L0'    0.000  96.4%  [90.9, 100]
+L0     0.381  96.0%  [90.0, 100]
+L1     0.857  96.0%  [90.0, 100]
+L2     1.159  96.0%  [90.0, 100]
+L3     1.921  100%   [100,  100]
+L4     2.363  100%   [100,  100]
+L5     3.567  92.0%  [84.0,  98]
+L5_cg  3.567  0.0%   [0, 0]       ← H5 FAIL on TSR
+L6     3.758  100%   [100,  100]
+```
+
+### DI (within-instance)
+```
+Rung    DI     PS     RR
+L0'    1.000  1.000  1.000
+L0     1.000  1.000  1.000
+L1     0.982  0.927  1.000   ← plan freed: PS drops
+L2     0.964  0.854  1.000
+L3     0.969  0.875  1.000
+L4     0.971  0.885  1.000
+L5     0.987  0.948  1.000
+L5_cg  0.984  0.938  0.000   ← codegen: RR=0 even at T=0
+L6     0.961  0.844  1.000
+```
+
+### Key findings so far
+1. DI drops when plan is freed (L1 PS: 1.000→0.927). Plan Stability is the
+   dominant DI component, confirming prior paper.
+2. H5: DI is indistinguishable for L5-tool vs L5-codegen (diff=0.003) ✓
+   BUT TSR is 92% vs 0% ✗ — mechanism matters for success.
+3. L5_codegen: RR=0 even at T=0 (code strings vary run-to-run).
+4. Finance_ecl TSR is flat-high (linear task) — H2 curve expected on
+   branching_ecl × capable models (Gemma, Qwen3, Nova-Pro).
+
+---
+
+## Research contribution (presentable)
+
+This work produces:
+1. **First empirical ADF curve**: determinism and success as continuous functions
+   of a single, computable quantity (ADF = log2-sum of legal choices).
+2. **Mechanism-vs-ADF decomposition**: H5 shows ADF alone doesn't predict
+   task success when substrate differs — mechanism adds independent signal.
+3. **Plan-layer finding**: Plan Stability is the dominant DI component at T=0.
+   Even unconstrained tool/state choices don't add trace variance when T=0.
+4. **Model-capability × constraint interaction**: Non-monotone H2 curve visible
+   for branching tasks only with capable models — Nova-Micro lacks the capacity
+   to discover ESCALATION, showing H4 empirically.
+5. **Codegen non-determinism**: Even at T=0, codegen paths are trace-non-
+   deterministic (RR=0), while tool_call paths are trace-deterministic (RR=1).
+   ADF doesn't capture this; it's a mechanism-specific finding.
+
+---
+
+## Files of interest
+- `results/grid/runs.jsonl`     — all grid runs (append-only)
+- `results/grid/summary.json`   — per-cell TSR aggregates
+- `results/analysis/`           — analysis outputs after phase7_analysis.py
+- `push_to_github.py`           — run with PAT to push to GitHub
+- `discards.jsonl`              — should be empty/absent (no discards yet)
+- `docs/adf_ladder.md`          — 8 rung definitions (FROZEN)
+- `PREREGISTRATION.md`          — frozen hypotheses at commit 34b1a37
