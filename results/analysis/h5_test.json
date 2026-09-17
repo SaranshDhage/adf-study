@@ -12,5 +12,33 @@
     "tsr_diff": null,
     "h5_di_indistinguishable": true,
     "h5_tsr_indistinguishable": false
+  },
+  "finance_ecl|google.gemma-3-27b-it": {
+    "family": "finance_ecl",
+    "model": "google.gemma-3-27b-it",
+    "di_tool": 0.96875,
+    "rr_tool": 1.0,
+    "tsr_tool": 0.0,
+    "di_codegen": 0.9765625,
+    "rr_codegen": 0.5833333333333334,
+    "tsr_codegen": 0.0,
+    "di_diff": 0.0078,
+    "tsr_diff": null,
+    "h5_di_indistinguishable": true,
+    "h5_tsr_indistinguishable": false
+  },
+  "finance_ecl|qwen.qwen3-32b-v1:0": {
+    "family": "finance_ecl",
+    "model": "qwen.qwen3-32b-v1:0",
+    "di_tool": 0.9791666666666666,
+    "rr_tool": 0.20833333333333334,
+    "tsr_tool": 1.0,
+    "di_codegen": 1.0,
+    "rr_codegen": 0.0,
+    "tsr_codegen": 0.0,
+    "di_diff": 0.0208,
+    "tsr_diff": null,
+    "h5_di_indistinguishable": true,
+    "h5_tsr_indistinguishable": false
   }
 }

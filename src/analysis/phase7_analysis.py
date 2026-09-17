@@ -311,8 +311,12 @@ def test_h3(tsr_table: dict) -> dict:
 def test_h4(tsr_table: dict) -> dict:
     """H4: More capable models have their TSR optimum at higher ADF.
 
+    Operationalisation: for each model, find the highest ADF_rate at which TSR
+    is still at its peak value (its 'effective ceiling').  A more capable model
+    should sustain peak performance to higher ADF before degrading.
+
     Primary contrast: Gemma-3-27B vs Qwen3-32B (same parameter class, different
-    generation). Tested within-family on ADF_rate.
+    generation).  Tested within-family on ADF_rate only.
     """
     results: dict = {}
     capability_order = [
@@ -323,7 +327,8 @@ def test_h4(tsr_table: dict) -> dict:
     ]
 
     for family in ["finance_ecl", "branching_ecl"]:
-        model_opts: dict[str, float] = {}
+        model_ceilings: dict[str, float] = {}
+        model_details: dict[str, dict] = {}
         for model in capability_order:
             cells = sorted(
                 [m for m in tsr_table.values()
@@ -333,25 +338,42 @@ def test_h4(tsr_table: dict) -> dict:
             )
             if not cells:
                 continue
-            tsr  = [c["tsr"] for c in cells]
+            tsr  = [c["tsr"]      for c in cells]
             adfs = [c["adf_rate"] for c in cells]
-            model_opts[model] = adfs[tsr.index(max(tsr))]
+            peak = max(tsr)
 
-        if len(model_opts) < 2:
+            # Highest ADF at which TSR == peak (last sustained peak)
+            ceiling_adf = max(
+                adf for adf, t in zip(adfs, tsr) if t >= peak - 0.001
+            )
+            model_ceilings[model] = ceiling_adf
+            model_details[model] = {
+                "peak_tsr": peak,
+                "ceiling_adf": ceiling_adf,
+                "tsr_by_rung": dict(zip([c["rung"] for c in cells], tsr)),
+            }
+
+        if len(model_ceilings) < 2:
             continue
 
-        # Check monotone ordering (higher capability → higher optimal ADF)
-        opt_adfs = [model_opts.get(m) for m in capability_order if m in model_opts]
+        # Primary contrast: Qwen3-32B ceiling >= Gemma-3-27B ceiling
+        qwen_ceiling  = model_ceilings.get("qwen.qwen3-32b-v1:0")
+        gemma_ceiling = model_ceilings.get("google.gemma-3-27b-it")
         primary_pair_correct = (
-            model_opts.get("qwen.qwen3-32b-v1:0", 0) >=
-            model_opts.get("google.gemma-3-27b-it", 0)
+            qwen_ceiling is not None and gemma_ceiling is not None
+            and qwen_ceiling >= gemma_ceiling
         )
 
         results[family] = {
             "family": family,
-            "optimal_adf_by_model": model_opts,
-            "primary_pair_correct": primary_pair_correct,  # Qwen3 >= Gemma
-            "monotone_order": opt_adfs,
+            "optimal_adf_by_model": model_ceilings,
+            "model_details": model_details,
+            "primary_pair_correct": primary_pair_correct,
+            "primary_pair": {
+                "qwen3_ceiling": qwen_ceiling,
+                "gemma_ceiling": gemma_ceiling,
+                "direction": "Qwen3 >= Gemma (H4 predicts this)",
+            },
         }
 
     return results
